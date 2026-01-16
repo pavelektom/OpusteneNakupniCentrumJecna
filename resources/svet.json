@@ -1,0 +1,63 @@
+{
+  "start": "hlavni_hala",
+  "mistnosti": {
+    "hlavni_hala": {
+      "sousedi": {
+        "kancelar": "kancelar",
+        "elektronika": "elektronika",
+        "food_court": "food_court",
+        "vychod": "vychod",
+        "temna_chodba": "temna_chodba"
+      }
+    },
+    "kancelar": {
+      "sousedi": {
+        "hlavni_hala": "hlavni_hala"
+      }
+    },
+    "elektronika": {
+      "sousedi": {
+        "hlavni_hala": "hlavni_hala",
+        "sklad": "sklad"
+      }
+    },
+    "sklad": {
+      "sousedi": {
+        "elektronika": "elektronika"
+      }
+    },
+    "food_court": {
+      "sousedi": {
+        "hlavni_hala": "hlavni_hala"
+      }
+    },
+    "vychod": {
+      "sousedi": {
+        "hlavni_hala": "hlavni_hala"
+      }
+    },
+    "temna_chodba": {
+      "sousedi": {
+        "hlavni_hala": "hlavni_hala",
+        "potraviny": "potraviny",
+        "bezpecnostni_mistnost": "bezpecnostni_mistnost"
+      }
+    },
+    "potraviny": {
+      "sousedi": {
+        "temna_chodba": "temna_chodba"
+      }
+    },
+    "bezpecnostni_mistnost": {
+      "sousedi": {
+        "temna_chodba": "temna_chodba",
+        "nouzovy_vychod": "nouzovy_vychod"
+      }
+    },
+    "nouzovy_vychod": {
+      "sousedi": {
+        "bezpecnostni_mistnost": "bezpecnostni_mistnost"
+      }
+    }
+  }
+}
