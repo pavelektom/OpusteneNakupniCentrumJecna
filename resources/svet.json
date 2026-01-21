@@ -1,63 +1,163 @@
 {
-  "start": "hlavni_hala",
-  "mistnosti": {
-    "hlavni_hala": {
-      "sousedi": {
-        "kancelar": "kancelar",
-        "elektronika": "elektronika",
-        "food_court": "food_court",
-        "vychod": "vychod",
-        "temna_chodba": "temna_chodba"
-      }
+  "predmety": [
+    {
+      "nazev": "baterka",
+      "popis": "Funkcni_baterka_vhodna_pro_pohyb_v_temnych_mistnostech."
     },
-    "kancelar": {
-      "sousedi": {
-        "hlavni_hala": "hlavni_hala"
-      }
+    {
+      "nazev": "pristupova_karta",
+      "popis": "Karta_slouzici_k_otevreni_skladu."
     },
-    "elektronika": {
-      "sousedi": {
-        "hlavni_hala": "hlavni_hala",
-        "sklad": "sklad"
-      }
+    {
+      "nazev": "naradi",
+      "popis": "Sada_naradi_potrebna_k_otevreni_technicke_skrine."
     },
-    "sklad": {
-      "sousedi": {
-        "elektronika": "elektronika"
-      }
+    {
+      "nazev": "pojistka",
+      "popis": "Pojistka_do_hlavniho_bezpecnostniho_panelu."
     },
-    "food_court": {
-      "sousedi": {
-        "hlavni_hala": "hlavni_hala"
-      }
-    },
-    "vychod": {
-      "sousedi": {
-        "hlavni_hala": "hlavni_hala"
-      }
-    },
-    "temna_chodba": {
-      "sousedi": {
-        "hlavni_hala": "hlavni_hala",
-        "potraviny": "potraviny",
-        "bezpecnostni_mistnost": "bezpecnostni_mistnost"
-      }
-    },
-    "potraviny": {
-      "sousedi": {
-        "temna_chodba": "temna_chodba"
-      }
-    },
-    "bezpecnostni_mistnost": {
-      "sousedi": {
-        "temna_chodba": "temna_chodba",
-        "nouzovy_vychod": "nouzovy_vychod"
-      }
-    },
-    "nouzovy_vychod": {
-      "sousedi": {
-        "bezpecnostni_mistnost": "bezpecnostni_mistnost"
-      }
+    {
+      "nazev": "servisni_kod",
+      "popis": "Papirek_se_servisnim_kodem_k_bezpecnostnimu_panelu."
     }
-  }
+  ],
+
+  "postavy": [
+    {
+      "jmeno": "Robert",
+      "popis": "Hlidac_centra_ktery_zna_bezpecnostni_system."
+    },
+    {
+      "jmeno": "Alena",
+      "popis": "Zamestnankyne_centra_ktera_vi_kde_je_servisni_kod."
+    },
+    {
+      "jmeno": "Ferda",
+      "popis": "Technik_ktery_upozornuje_na_potrebu_naradi."
+    },
+    {
+      "jmeno": "Neznama_stvura",
+      "popis": "Neznama_hrozba_pohybujici_se_u_nouzoveho_vychodu."
+    }
+  ],
+
+  "mistnosti": [
+    {
+      "nazev": "hlavni_hala",
+      "popis": "Centralni_hala_obchodniho_centra.",
+      "jeZamcena": false,
+      "temna": false,
+      "sousedi": [
+        "temna_chodba",
+        "elektronika",
+        "food_court",
+        "vychod",
+        "kancelar"
+      ]
+    },
+    {
+      "nazev": "temna_chodba",
+      "popis": "Uzka_chodba_ve_ktere_panuje_uplna_tma.",
+      "jeZamcena": false,
+      "temna": true,
+      "sousedi": [
+        "hlavni_hala",
+        "potraviny",
+        "bezpecnostni_mistnost"
+      ]
+    },
+    {
+      "nazev": "elektronika",
+      "popis": "Maly_obchod_s_elektronikou.",
+      "jeZamcena": false,
+      "temna": false,
+      "sousedi": [
+        "hlavni_hala",
+        "sklad"
+      ]
+    },
+    {
+      "nazev": "sklad",
+      "popis": "Zapraseny_sklad_plny_regalu.",
+      "jeZamcena": true,
+      "temna": true,
+      "sousedi": [
+        "elektronika"
+      ]
+    },
+    {
+      "nazev": "food_court",
+      "popis": "Jidelni_zona_s_bufetem.",
+      "jeZamcena": false,
+      "temna": false,
+      "sousedi": [
+        "hlavni_hala"
+      ]
+    },
+    {
+      "nazev": "potraviny",
+      "popis": "Opusteny_obchod_s_prazdnymi_regaly.",
+      "jeZamcena": false,
+      "temna": false,
+      "sousedi": [
+        "temna_chodba"
+      ]
+    },
+    {
+      "nazev": "bezpecnostni_mistnost",
+      "popis": "Mistnost_s_hlavnim_bezpecnostnim_panelem.",
+      "jeZamcena": false,
+      "temna": false,
+      "sousedi": [
+        "temna_chodba",
+        "nouzovy_vychod"
+      ]
+    },
+    {
+      "nazev": "vychod",
+      "popis": "Hlavni_vychod_z_centra.",
+      "jeZamcena": true,
+      "temna": false,
+      "sousedi": [
+        "hlavni_hala"
+      ]
+    },
+    {
+      "nazev": "nouzovy_vychod",
+      "popis": "Nouzovy_vychod_s_neznamou_hrozbou.",
+      "jeZamcena": true,
+      "temna": true,
+      "sousedi": [
+        "bezpecnostni_mistnost"
+      ]
+    },
+    {
+      "nazev": "kancelar",
+      "popis": "Mala_kancelar_se_starym_pocitacem.",
+      "jeZamcena": false,
+      "temna": false,
+      "sousedi": [
+        "hlavni_hala"
+      ]
+    }
+  ],
+
+  "ukoly": [
+    {
+      "nazev": "najdi_baterku",
+      "popis": "Ziskej_baterku_abys_mohl_prochazet_temnou_chodbou."
+    },
+    {
+      "nazev": "odemkni_sklad",
+      "popis": "Najdi_pristupovou_kartu_a_odemkni_sklad."
+    },
+    {
+      "nazev": "oprav_panel",
+      "popis": "Pomoci_pojistky_a_servisniho_kodu_spust_bezpecnostni_system."
+    },
+    {
+      "nazev": "unikni_z_centra",
+      "popis": "Po_spusteni_systemu_se_dostan_k_vychodu."
+    }
+  ]
 }
