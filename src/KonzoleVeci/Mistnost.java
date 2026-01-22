@@ -47,5 +47,29 @@ public class Mistnost {
     public void setTemna(boolean temna) {
         this.temna = temna;
     }
+
+    public ArrayList<String> getSousedi() {
+        return sousedi;
+    }
+
+    public void setSousedi(ArrayList<String> sousedi) {
+        this.sousedi = sousedi;
+    }
+
+    public ArrayList<Predmet> getPredmety() {
+        return predmety;
+    }
+
+    public void setPredmety(ArrayList<Predmet> predmety) {
+        this.predmety = predmety;
+    }
+
+    public ArrayList<Postava> getPostavy() {
+        return postavy;
+    }
+
+    public void setPostavy(ArrayList<Postava> postavy) {
+        this.postavy = postavy;
+    }
 }
 

@@ -1,5 +1,6 @@
 import KonzoleVeci.Mistnost;
 import KonzoleVeci.Nacitani;
+import KonzoleVeci.PousteniPrikazu;
 
 import java.util.HashMap;
 
@@ -8,7 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
 
-        System.out.println("OK nacteno mistnosti: " + data.mistnosti.size());
-        System.out.println("Prvni mistnost: " + data.mistnosti.get(0).getNazev());
+        System.out.println("mistnosti: " + data.mistnosti.size());
+        PousteniPrikazu pust = new PousteniPrikazu();
+        pust.spusteni();
     }
 }

@@ -2,22 +2,35 @@ package KonzoleVeci;
 
 import Command.Command;
 import Postavy.Hrac;
+import Command.Jdi;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import KonzoleVeci.Nacitani;
+import java.util.Scanner;
 
+import KonzoleVeci.Nacitani;
 
 public class Hra {
         private Hrac hrac;
         private HashMap<String, Command> prikazy = new HashMap<>();
         private Mistnost aktualniMistnost;
+        private boolean End;
+        private Nacitani nacitani;
+        Scanner sc = new Scanner(System.in);
+
+    public Nacitani getNacitani() {
+        return nacitani;
+    }
 
     public Hra() {
+        this.nacitani = Nacitani.loadGameDataFromResources("resources/svet.json");
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
         System.out.println("Predmety: " + data.predmety.size());
         System.out.println("Postavy: " + data.postavy.size());
         System.out.println("Mistnosti: " + data.mistnosti.size());
         System.out.println("Ukoly: " + data.ukoly.size());
+        this.aktualniMistnost = data.najdiMistnost("hlavni_hala");
+        pridaniPrikazu();
     }
     public Hrac getHrac() {
         return hrac;
@@ -43,6 +56,16 @@ public class Hra {
         this.aktualniMistnost = aktualniMistnost;
     }
 
+    public void pridaniPrikazu(){
+        prikazy.put("jdi", new Jdi());
+    }
 
 
+    public boolean isEnd() {
+        return End;
+    }
+
+    public void setEnd(boolean end) {
+        End = end;
+    }
 }

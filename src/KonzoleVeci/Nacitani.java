@@ -14,7 +14,7 @@ public class Nacitani {
 
     public ArrayList<Predmet> predmety;
     public ArrayList<Postava> postavy ;
-    public ArrayList<Mistnost>  mistnosti;
+    public ArrayList<Mistnost> mistnosti;
     public ArrayList<Ukoly> ukoly;
 
     public static Nacitani loadGameDataFromResources(String path) {
@@ -30,6 +30,15 @@ public class Nacitani {
             e.printStackTrace();
             throw new RuntimeException("Chyba pri nacitani JSON ze souboru: " + path);
         }
+    }
+
+    public  Mistnost najdiMistnost(String nazev) {
+        for (int i = 0; i < mistnosti.size(); i++) {
+            if (mistnosti.get(i).getNazev().equalsIgnoreCase(nazev)) {
+                return mistnosti.get(i);
+            }
+        }
+        throw new IllegalArgumentException("Neexistuje lokace s nazvem: " + nazev);
     }
 
 
