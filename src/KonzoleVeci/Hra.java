@@ -3,6 +3,8 @@ package KonzoleVeci;
 import Command.Command;
 import Postavy.Hrac;
 import Command.Jdi;
+import Command.Konec;
+import Command.Napoveda;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +24,11 @@ public class Hra {
         return nacitani;
     }
 
+    public void pridaniPrikazu(){
+        prikazy.put("jdi", new Jdi());
+        prikazy.put("napoveda", new Napoveda());
+        prikazy.put("konec", new Konec());
+    }
     public Hra() {
         this.nacitani = Nacitani.loadGameDataFromResources("resources/svet.json");
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
@@ -56,9 +63,7 @@ public class Hra {
         this.aktualniMistnost = aktualniMistnost;
     }
 
-    public void pridaniPrikazu(){
-        prikazy.put("jdi", new Jdi());
-    }
+
 
 
     public boolean isEnd() {
