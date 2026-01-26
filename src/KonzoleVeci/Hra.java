@@ -70,8 +70,6 @@ public class Hra {
         return prikazy;
     }
 
-
-
     @Override
     public String toString() {
         return "Dostupne Prikazy" + prikazy;
