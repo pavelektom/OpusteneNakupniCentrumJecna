@@ -13,6 +13,7 @@ import java.util.Scanner;
 import KonzoleVeci.Nacitani;
 
 public class Hra {
+        private ArrayList<Ukoly> ukoly = new ArrayList<>();
         private Hrac hrac;
         private HashMap<String, Command> prikazy = new HashMap<>();
         private Mistnost aktualniMistnost;
@@ -62,8 +63,6 @@ public class Hra {
     public void setAktualniMistnost(Mistnost aktualniMistnost) {
         this.aktualniMistnost = aktualniMistnost;
     }
-
-
 
 
     public boolean isEnd() {

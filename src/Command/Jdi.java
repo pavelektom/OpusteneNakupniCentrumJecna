@@ -13,7 +13,7 @@ public class Jdi implements Command {
             System.out.println("neni nastavena aktualni mistnost");
             return;
         }
-        if (aktualni.getSousedi() == null || !aktualni.getSousedi().contains(cil)) {
+        if (aktualni.getSousedi() == null && !aktualni.getSousedi().contains(cil)) {
             System.out.println("Tam odtud jit nemuzes");
             return;
         }
