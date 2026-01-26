@@ -2,23 +2,28 @@
   "predmety": [
     {
       "nazev": "baterka",
-      "popis": "Funkcni_baterka_vhodna_pro_pohyb_v_temnych_mistnostech."
+      "popis": "Funkcni_baterka_vhodna_pro_pohyb_v_temnych_mistnostech.",
+      "skryty": true
     },
     {
       "nazev": "pristupova_karta",
-      "popis": "Karta_slouzici_k_otevreni_skladu."
+      "popis": "Karta_slouzici_k_otevreni_skladu.",
+      "skryty": false
     },
     {
       "nazev": "naradi",
-      "popis": "Sada_naradi_potrebna_k_otevreni_technicke_skrine."
+      "popis": "Sada_naradi_potrebna_k_otevreni_technicke_skrine.",
+      "skryty": false
     },
     {
       "nazev": "pojistka",
-      "popis": "Pojistka_do_hlavniho_bezpecnostniho_panelu."
+      "popis": "Pojistka_do_hlavniho_bezpecnostniho_panelu.",
+      "skryty": false
     },
     {
       "nazev": "servisni_kod",
-      "popis": "Papirek_se_servisnim_kodem_k_bezpecnostnimu_panelu."
+      "popis": "Papirek_se_servisnim_kodem_k_bezpecnostnimu_panelu.",
+      "skryty": false
     }
   ],
 

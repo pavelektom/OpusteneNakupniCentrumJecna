@@ -19,26 +19,40 @@ public class Nacitani {
 
     public static Nacitani loadGameDataFromResources(String path) {
         Gson gson = new Gson();
-
         try (
                 FileInputStream fis = new FileInputStream(path);
                 InputStreamReader reader = new InputStreamReader(fis, StandardCharsets.UTF_8)
         ) {
             return gson.fromJson(reader, Nacitani.class);
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Chyba pri nacitani JSON ze souboru: " + path);
         }
     }
 
-    public  Mistnost najdiMistnost(String nazev) {
+    public Mistnost najdiMistnost(String nazev) {
         for (int i = 0; i < mistnosti.size(); i++) {
             if (mistnosti.get(i).getNazev().equalsIgnoreCase(nazev)) {
                 return mistnosti.get(i);
             }
         }
         throw new IllegalArgumentException("Neexistuje lokace s nazvem: " + nazev);
+    }
+    public Predmet najdiPredmet(String nazev) {
+        for (int i = 0; i < predmety.size(); i++) {
+            if (predmety.get(i).getNazev().equalsIgnoreCase(nazev)) {
+                return predmety.get(i);
+            }
+        }
+        throw new IllegalArgumentException("Neexistuje predmet s nazvem: " + nazev);
+    }
+    public Postava najdiPostavu(String nazev) {
+        for (int i = 0; i < postavy.size(); i++) {
+            if (postavy.get(i).getJmeno().equalsIgnoreCase(nazev)) {
+                return postavy.get(i);
+            }
+        }
+        throw new IllegalArgumentException("Neexistuje postava s jmenem: " + nazev);
     }
 
 

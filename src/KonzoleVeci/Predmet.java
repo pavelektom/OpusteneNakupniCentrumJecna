@@ -3,13 +3,11 @@ package KonzoleVeci;
 public class Predmet {
     private String nazev;
     private String popis;
-    private boolean prenosny;
     private boolean skryty;
 
-    public Predmet(String nazev, String popis, boolean prenosny, boolean skryty) {
+    public Predmet(String nazev, String popis, boolean skryty) {
         this.nazev = nazev;
         this.popis = popis;
-        this.prenosny = prenosny;
         this.skryty = skryty;
     }
 
@@ -27,14 +25,6 @@ public class Predmet {
 
     public void setPopis(String popis) {
         this.popis = popis;
-    }
-
-    public boolean isPrenosny() {
-        return prenosny;
-    }
-
-    public void setPrenosny(boolean prenosny) {
-        this.prenosny = prenosny;
     }
 
     public boolean isSkryty() {
