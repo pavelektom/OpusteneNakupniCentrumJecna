@@ -2,27 +2,27 @@
   "predmety": [
     {
       "nazev": "baterka",
-      "popis": "Funkcni_baterka_vhodna_pro_pohyb_v_temnych_mistnostech.",
+      "popis": "Funkcni baterka vhodna pro pohyb v temnych mistnostech.",
       "skryty": true
     },
     {
       "nazev": "pristupova_karta",
-      "popis": "Karta_slouzici_k_otevreni_skladu.",
+      "popis": "Karta slouzici k otevreni skladu.",
       "skryty": false
     },
     {
       "nazev": "naradi",
-      "popis": "Sada_naradi_potrebna_k_otevreni_technicke_skrine.",
+      "popis": "Sada naradi potrebna k otevreni technicke skrine.",
       "skryty": false
     },
     {
       "nazev": "pojistka",
-      "popis": "Pojistka_do_hlavniho_bezpecnostniho_panelu.",
+      "popis": "Pojistka do hlavniho bezpecnostniho panelu.",
       "skryty": false
     },
     {
       "nazev": "servisni_kod",
-      "popis": "Papirek_se_servisnim_kodem_k_bezpecnostnimu_panelu.",
+      "popis": "Papirek se servisnim kodem k bezpecnostnimu panelu.",
       "skryty": false
     }
   ],
@@ -30,28 +30,35 @@
   "postavy": [
     {
       "jmeno": "Robert",
-      "popis": "Hlidac_centra_ktery_zna_bezpecnostni_system."
+      "popis": "Hlidac centra, ktery zna bezpecnostni system."
     },
     {
       "jmeno": "Alena",
-      "popis": "Zamestnankyne_centra_ktera_vi_kde_je_servisni_kod."
+      "popis": "Zamestnankyne obchodniho centra, vi kde je servisni kod"
     },
     {
       "jmeno": "Ferda",
-      "popis": "Technik_ktery_upozornuje_na_potrebu_naradi."
+      "popis": "Technik, ktery upozornuje na potrebne naradi."
     },
     {
       "jmeno": "Neznama_stvura",
-      "popis": "Neznama_hrozba_pohybujici_se_u_nouzoveho_vychodu."
+      "popis": "brrrrrrr brrrrrrrrrrr"
     }
   ],
 
   "mistnosti": [
     {
       "nazev": "hlavni_hala",
-      "popis": "Centralni_hala_obchodniho_centra.",
+      "popis": "Centralni hlavni hala obchodniho centra, skryvaji se tu dulezite veci.",
       "jeZamcena": false,
       "temna": false,
+      "predmety": [
+        {
+        "nazev": "baterka",
+        "popis": "Funkcni baterka vhodna pro pohyb v temnych mistnostech.",
+        "skryty": true
+        }
+        ],
       "sousedi": [
         "temna_chodba",
         "elektronika",
@@ -62,7 +69,7 @@
     },
     {
       "nazev": "temna_chodba",
-      "popis": "Uzka_chodba_ve_ktere_panuje_uplna_tma.",
+      "popis": "Uzka chodba ve ktere je velika tma.",
       "jeZamcena": false,
       "temna": true,
       "sousedi": [
@@ -73,7 +80,7 @@
     },
     {
       "nazev": "elektronika",
-      "popis": "Maly_obchod_s_elektronikou.",
+      "popis": "Maly obchod s elektronikou, zbyly tu uz jen dva pocitace. ",
       "jeZamcena": false,
       "temna": false,
       "sousedi": [
@@ -83,7 +90,7 @@
     },
     {
       "nazev": "sklad",
-      "popis": "Zapraseny_sklad_plny_regalu.",
+      "popis": "Zapraseny sklad, ve kterem jsou jenom prazdne regaly a zbytecne zbozi.",
       "jeZamcena": true,
       "temna": true,
       "sousedi": [
@@ -92,7 +99,7 @@
     },
     {
       "nazev": "food_court",
-      "popis": "Jidelni_zona_s_bufetem.",
+      "popis": "Jidelni zona, je tu bufet",
       "jeZamcena": false,
       "temna": false,
       "sousedi": [
@@ -101,7 +108,7 @@
     },
     {
       "nazev": "potraviny",
-      "popis": "Opusteny_obchod_s_prazdnymi_regaly.",
+      "popis": "Opusteny obchod, jsou tu jen nejake prosle potraviny, mozna se tu take neco skryva...",
       "jeZamcena": false,
       "temna": false,
       "sousedi": [
@@ -110,7 +117,7 @@
     },
     {
       "nazev": "bezpecnostni_mistnost",
-      "popis": "Mistnost_s_hlavnim_bezpecnostnim_panelem.",
+      "popis": "Bezpecnostni mistnost, je tu hlavni bezpecnostni panel se systemem, resetuj ho.",
       "jeZamcena": false,
       "temna": false,
       "sousedi": [
@@ -120,7 +127,7 @@
     },
     {
       "nazev": "vychod",
-      "popis": "Hlavni_vychod_z_centra.",
+      "popis": "Hlavni vychod z centra!!",
       "jeZamcena": true,
       "temna": false,
       "sousedi": [
@@ -129,7 +136,7 @@
     },
     {
       "nazev": "nouzovy_vychod",
-      "popis": "Nouzovy_vychod_s_neznamou_hrozbou.",
+      "popis": "Nouzovy vychod, take tudy muzes vyjit...neni to garantovane....",
       "jeZamcena": true,
       "temna": true,
       "sousedi": [
@@ -138,7 +145,7 @@
     },
     {
       "nazev": "kancelar",
-      "popis": "Mala_kancelar_se_starym_pocitacem.",
+      "popis": "Mala kancelar, je tu jen stary pocitac.",
       "jeZamcena": false,
       "temna": false,
       "sousedi": [
@@ -150,19 +157,19 @@
   "ukoly": [
     {
       "nazev": "najdi_baterku",
-      "popis": "Ziskej_baterku_abys_mohl_prochazet_temnou_chodbou."
+      "popis": "Ziskej baterku, jinak nebudes moci prohledat temnou chodbu."
     },
     {
       "nazev": "odemkni_sklad",
-      "popis": "Najdi_pristupovou_kartu_a_odemkni_sklad."
+      "popis": "Najdi pristupovou kartu a odemkni sklad."
     },
     {
       "nazev": "oprav_panel",
-      "popis": "Pomoci_pojistky_a_servisniho_kodu_spust_bezpecnostni_system."
+      "popis": "Pomoci pojistky a servisniho kodu zprovozni bezpecnostni system"
     },
     {
       "nazev": "unikni_z_centra",
-      "popis": "Po_spusteni_systemu_se_dostan_k_vychodu."
+      "popis": "Po spusteni systemu dojdi k vychodu a jdi pryc."
     }
   ]
 }

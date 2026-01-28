@@ -29,6 +29,11 @@ public class Hra {
         private Nacitani nacitani;
         Scanner sc = new Scanner(System.in);
         private Inventory inventar = new Inventory(4);
+        private Predmet predmety;
+
+    public Predmet getPredmety() {
+        return predmety;
+    }
 
     public Nacitani getNacitani() {
         return nacitani;
@@ -58,6 +63,7 @@ public class Hra {
     public Hrac getHrac() {
         return hrac;
     }
+
     public Inventory getInventar() {
         return inventar;
     }

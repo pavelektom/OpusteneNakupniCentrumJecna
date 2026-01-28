@@ -11,8 +11,11 @@ public class Inventory {
         this.predmety = new ArrayList<>();
     }
 
-    public boolean pridej(Predmet p) {                  // Tato metoda pridava predmet do inventare, ale jenom pokud je v inventari dostatek mista
-        if (predmety.size() >= kapacita || p == null) { // Take kontroluje jestli hrac vubec zadal nejaky predmet.
+    public boolean pridej(Predmet p) {
+        if (p == null){
+            return false;
+        }                                               // Tato metoda pridava predmet do inventare, ale jenom pokud je v inventari dostatek mista
+        if (predmety.size() >= kapacita) {              // Take kontroluje jestli hrac vubec zadal nejaky predmet.
             return false;                               // Tady se dozvime jestli hrac ma misto v inventari pro dany predmet, pokud ne, nenechame ho pridat predmet.
         }else {
             predmety.add(p);                            // Pokud ma misto, predmet se prida.
@@ -36,11 +39,11 @@ public class Inventory {
         if (nazev == null) {
             return null;
         }
-        for (int i = 0; i < predmety.size(); i++) {
-            Predmet p = predmety.get(i);
-            if (p.getNazev().equalsIgnoreCase(nazev)) {
+        for(int i = 0; i < predmety.size(); i++){
+            Predmet predmet = predmety.get(i);
+            if (predmet.getNazev().equalsIgnoreCase(nazev)) {
                 predmety.remove(i);
-                return p;
+                return predmet;
             }
         }
         return null;

@@ -11,10 +11,28 @@ public class Mistnost {
     private boolean jeZamcena;
     private boolean temna;
 
-    private ArrayList<String> sousedi;
-    private ArrayList<Predmet> predmety;
-    private ArrayList<Postava> postavy;
+    private ArrayList<String> sousedi = new ArrayList<>();
+    private ArrayList<Predmet> predmety = new ArrayList<>();
+    private ArrayList<Postava> postavy = new ArrayList<>();
 
+    public Mistnost(){
+
+    }
+
+    public void pridatPredmet(Predmet p) {
+        predmety.add(p);
+    }
+
+    public Predmet odeberPredmet(String nazev) {
+        for (int i = 0; i < predmety.size(); i++) {
+            Predmet p = predmety.get(i);
+            if (p.getNazev().equalsIgnoreCase(nazev)) {
+                predmety.remove(i);
+                return p;
+            }
+        }
+        return null;
+    }
 
     public String getNazev() {
         return nazev;
