@@ -7,7 +7,7 @@ import KonzoleVeci.Inventory;
 public class Inventar implements Command {
 
     @Override
-    public void vykonat(Hra hra, String s) {
-        hra.getInventar().vypis(); //pouzijeme metodu z Inventory, abychom vypsali co mame v inventari
+    public String vykonat(Hra hra, String s) {
+        return hra.getInventar().vypis(); //pouzijeme metodu z Inventory, abychom vypsali co mame v inventari
     }
 }

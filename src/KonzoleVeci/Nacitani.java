@@ -52,6 +52,7 @@ public class Nacitani {
                 return postavy.get(i);
             }
         }
+        System.out.println("ups");
         throw new IllegalArgumentException("Neexistuje postava s jmenem: " + nazev);
     }
 

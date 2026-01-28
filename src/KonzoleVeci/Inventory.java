@@ -13,8 +13,8 @@ public class Inventory {
 
     public boolean pridej(Predmet p) {
         if (p == null){
-            return false;
-        }                                               // Tato metoda pridava predmet do inventare, ale jenom pokud je v inventari dostatek mista
+            return false;                               // Tato metoda pridava predmet do inventare, ale jenom pokud je v inventari dostatek mista
+        }
         if (predmety.size() >= kapacita) {              // Take kontroluje jestli hrac vubec zadal nejaky predmet.
             return false;                               // Tady se dozvime jestli hrac ma misto v inventari pro dany predmet, pokud ne, nenechame ho pridat predmet.
         }else {
@@ -22,18 +22,32 @@ public class Inventory {
             return true;
         }
 
+
+    }
+    public String vypis() { // V teto metode zjistime co je v inventari, pokud nic, vypiseme, ze je prazdny.
+        if (predmety.isEmpty()) {
+            return ">> Inventar je prazdny.";
+        }
+        String vypis = ">> kapacita inventare: " + predmety.size() + "/" + kapacita + " \n";
+        for (Predmet p : predmety) {
+            vypis = vypis + " - " + p.getNazev() + " ";
+        }
+        return vypis;
     }
 
-    public void vypis() { // V teto metode zjistime co je v inventari, pokud nic, vypiseme, ze je prazdny.
-        if (predmety.isEmpty()) {
-            System.out.println(">> Inventar je prazdny.");
-            return;
-        }
-        System.out.println(">> kapacita inventare: " + predmety.size() + "/" + kapacita + " ");
-        for (Predmet p : predmety) {
-            System.out.println(" - " + p.getNazev());
-        }
-    }
+//    public String vypis() { // V teto metode zjistime co je v inventari, pokud nic, vypiseme, ze je prazdny.
+//        String vypis = "";
+//        if (predmety.isEmpty()) {
+//            return ">> Inventar je prazdny.\n";
+//        }
+//
+//        vypis = vypis + ">> kapacita inventare: " + predmety.size() + "/" + kapacita + " \n";
+//        for (Predmet p : predmety) {
+//            //System.out.println();
+//            vypis = vypis + " - " + p.getNazev() + "\n";
+//        }
+//        return vypis;
+//    }
 
     public Predmet odeber(String nazev) { // Tuto metodu pouzivame na odebrani predmetu z inventare, pouziju ho v commandu Poloz
         if (nazev == null) {
