@@ -55,6 +55,15 @@ public class Nacitani {
         System.out.println("ups");
         throw new IllegalArgumentException("Neexistuje postava s jmenem: " + nazev);
     }
+    public Ukoly najdiUkol(String nazev) {
+        for (Ukoly u : ukoly) {
+            if (u.getNazev().equalsIgnoreCase(nazev)) {
+                return u;
+            }
+        }
+        throw new IllegalArgumentException("Neexistuje ukol s nazvem: " + nazev);
+    }
+
 
 
 }

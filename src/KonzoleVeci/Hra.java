@@ -23,7 +23,7 @@ import KonzoleVeci.Nacitani;
 import Postavy.Postava;
 
 public class Hra {
-        private ArrayList<Ukoly> ukoly = new ArrayList<>();
+        private ArrayList<Ukoly> ukoly;
         private Hrac hrac;
         private HashMap<String, Command> prikazy = new HashMap<>();
         private Mistnost aktualniMistnost;
@@ -84,12 +84,13 @@ public class Hra {
         prikazy.put("mluv", new Mluv());
     }
     public Hra() {
-        this.nacitani = Nacitani.loadGameDataFromResources("resources/svet.json");
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
+        this.ukoly = data.ukoly;
         System.out.println("Predmety: " + data.predmety.size());
         System.out.println("Postavy: " + data.postavy.size());
         System.out.println("Mistnosti: " + data.mistnosti.size());
         System.out.println("Ukoly: " + data.ukoly.size());
+        this.nacitani = data;
         this.aktualniMistnost = data.najdiMistnost("hlavni_hala");
         pridaniPrikazu();
     }

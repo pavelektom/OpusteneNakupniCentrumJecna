@@ -19,9 +19,9 @@ public class List implements Command {
             nebaviMeTo = nebaviMeTo + " - " + zboznujuProgramovani.getPopis();
 
             if (zboznujuProgramovani.isSplneny()){
-                return "SPLNENY";
+                nebaviMeTo = nebaviMeTo + " - splneny" + "\n";
             } else{
-                return "NESPLNENY";
+                nebaviMeTo = nebaviMeTo + " - nesplneny" + "\n";
             }
         }
         return nebaviMeTo;
