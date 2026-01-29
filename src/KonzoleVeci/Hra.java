@@ -23,7 +23,6 @@ import KonzoleVeci.Nacitani;
 import Postavy.Postava;
 
 public class Hra {
-
         private ArrayList<Ukoly> ukoly = new ArrayList<>();
         private Hrac hrac;
         private HashMap<String, Command> prikazy = new HashMap<>();
@@ -52,7 +51,13 @@ public class Hra {
         return nacitani;
     }
 
+    public ArrayList<Ukoly> getUkoly() {
+        return ukoly;
+    }
 
+    public void setUkoly(ArrayList<Ukoly> ukoly) {
+        this.ukoly = ukoly;
+    }
 
     private boolean technickaSkrinOtevrena;
 

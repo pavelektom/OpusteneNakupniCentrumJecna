@@ -4,7 +4,7 @@ public class Postava {
     private String jmeno;
     private String popis;
     private String dialog;
-    
+
 
 
     public String getPopis() {
