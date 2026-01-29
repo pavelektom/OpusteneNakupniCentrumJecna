@@ -30,19 +30,24 @@
   "postavy": [
     {
       "jmeno": "Robert",
-      "popis": "Hlidac centra, ktery zna bezpecnostni system."
+      "popis": "Hlidac centra, ktery zna bezpecnostni system.",
+      "dialog": "Robert | Ahoj, dostal ses az ke mne, tady u me mas bezpecnostni system, pozor ale, trikrat das spatny servisni kod a prohrajeme, taky nezapomen ze musis mit pojistka, aby jsi dokazal zprovoznit panel."
+
     },
     {
       "jmeno": "Alena",
-      "popis": "Zamestnankyne obchodniho centra, vi kde je servisni kod"
+      "popis": "Zamestnankyne obchodniho centra, vi kde je servisni kod",
+      "dialog": "Alena | Hele, neco ti reknu, musis to tady prohledat, nekde se tu bude nachazet servisni kod. pomoci neho budes moci odemknout bezpecnostni panel, ja ho dlouho zpet ztratila a nemam tuseni kde je."
     },
     {
       "jmeno": "Ferda",
-      "popis": "Technik, ktery upozornuje na potrebne naradi."
+      "popis": "Technik, ktery upozornuje na potrebne naradi.",
+      "dialog": "Ferda | Vis co je nutny, ja uz se skoro ani nemuzu hnout, ale nekde tady kolem mas naradi, najdi ho a pote najdi technickou skrin, tam uz budes vedet co delat."
     },
     {
       "jmeno": "Neznama_stvura",
-      "popis": "brrrrrrr brrrrrrrrrrr"
+      "popis": "brrrrrrr brrrrrrrrrrr",
+      "dialog": "brrrrrrr brrrrrrrr zabiju te"
     }
   ],
 
@@ -54,11 +59,12 @@
       "temna": false,
       "predmety": [
         {
-        "nazev": "baterka",
-        "popis": "Funkcni baterka vhodna pro pohyb v temnych mistnostech.",
-        "skryty": true
+          "nazev": "baterka",
+          "popis": "Funkcni baterka vhodna pro pohyb v temnych mistnostech.",
+          "skryty": true
         }
-        ],
+      ],
+      "postavy": [],
       "sousedi": [
         "temna_chodba",
         "elektronika",
@@ -72,6 +78,14 @@
       "popis": "Uzka chodba ve ktere je velika tma.",
       "jeZamcena": false,
       "temna": true,
+      "predmety": [],
+      "postavy": [
+        {
+          "jmeno": "Neznama_stvura",
+          "popis": "brrrrrrr brrrrrrrrrrr",
+          "dialog": "brrrrrrr brrrrrrrr zabiju te"
+        }
+      ],
       "sousedi": [
         "hlavni_hala",
         "potraviny",
@@ -83,6 +97,14 @@
       "popis": "Maly obchod s elektronikou, zbyly tu uz jen dva pocitace. ",
       "jeZamcena": false,
       "temna": false,
+      "predmety": [
+        {
+          "nazev": "pristupova_karta",
+          "popis": "Karta slouzici k otevreni skladu.",
+          "skryty": false
+        }
+      ],
+      "postavy": [],
       "sousedi": [
         "hlavni_hala",
         "sklad"
@@ -93,6 +115,20 @@
       "popis": "Zapraseny sklad, ve kterem jsou jenom prazdne regaly a zbytecne zbozi.",
       "jeZamcena": true,
       "temna": true,
+      "predmety": [
+        {
+          "nazev": "naradi",
+          "popis": "Sada naradi potrebna k otevreni technicke skrine.",
+          "skryty": false
+        }
+      ],
+      "postavy": [
+        {
+          "jmeno": "Ferda",
+          "popis": "Technik, ktery upozornuje na potrebne naradi.",
+          "dialog": "Ferda | Vis co je nutny, ja uz se skoro ani nemuzu hnout, ale nekde tady kolem mas naradi, najdi ho a pote najdi technickou skrin, tam uz budes vedet co delat."
+        }
+      ],
       "sousedi": [
         "elektronika"
       ]
@@ -102,6 +138,8 @@
       "popis": "Jidelni zona, je tu bufet",
       "jeZamcena": false,
       "temna": false,
+      "predmety": [],
+      "postavy": [],
       "sousedi": [
         "hlavni_hala"
       ]
@@ -111,6 +149,8 @@
       "popis": "Opusteny obchod, jsou tu jen nejake prosle potraviny, mozna se tu take neco skryva...",
       "jeZamcena": false,
       "temna": false,
+      "predmety": [],
+      "postavy": [],
       "sousedi": [
         "temna_chodba"
       ]
@@ -120,6 +160,14 @@
       "popis": "Bezpecnostni mistnost, je tu hlavni bezpecnostni panel se systemem, resetuj ho.",
       "jeZamcena": false,
       "temna": false,
+      "predmety": [],
+      "postavy": [
+        {
+          "jmeno": "Robert",
+          "popis": "Hlidac centra, ktery zna bezpecnostni system.",
+          "dialog": "Robert | Ahoj, dostal ses az ke mne, tady u me mas bezpecnostni system, pozor ale, trikrat das spatny servisni kod a prohrajeme, taky nezapomen ze musis mit pojistka, aby jsi dokazal zprovoznit panel."
+        }
+      ],
       "sousedi": [
         "temna_chodba",
         "nouzovy_vychod"
@@ -130,6 +178,8 @@
       "popis": "Hlavni vychod z centra!!",
       "jeZamcena": true,
       "temna": false,
+      "predmety": [],
+      "postavy": [],
       "sousedi": [
         "hlavni_hala"
       ]
@@ -139,6 +189,8 @@
       "popis": "Nouzovy vychod, take tudy muzes vyjit...neni to garantovane....",
       "jeZamcena": true,
       "temna": true,
+      "predmety": [],
+      "postavy": [],
       "sousedi": [
         "bezpecnostni_mistnost"
       ]
@@ -148,11 +200,26 @@
       "popis": "Mala kancelar, je tu jen stary pocitac.",
       "jeZamcena": false,
       "temna": false,
+      "predmety": [
+        {
+          "nazev": "servisni_kod",
+          "popis": "Papirek se servisnim kodem k bezpecnostnimu panelu.",
+          "skryty": false
+        }
+      ],
+      "postavy": [
+        {
+          "jmeno": "Alena",
+          "popis": "Zamestnankyne obchodniho centra, skoro vi kde je servisni kod",
+          "dialog": "Alena | Hele, neco ti reknu, musis to tady prohledat, nekde se tu bude nachazet servisni kod. pomoci neho budes moci odemknout bezpecnostni panel, ja ho dlouho zpet ztratila a nemam tuseni kde je."
+        }
+      ],
       "sousedi": [
         "hlavni_hala"
       ]
     }
   ],
+
 
   "ukoly": [
     {
@@ -162,6 +229,10 @@
     {
       "nazev": "odemkni_sklad",
       "popis": "Najdi pristupovou kartu a odemkni sklad."
+    },
+    {
+      "nazev": "dostan_pojistku",
+      "popis": "Dostan ze skladu naradi, pomoci naradi otevri technickou skrin a vezmi si pojistku."
     },
     {
       "nazev": "oprav_panel",
