@@ -11,6 +11,15 @@ public class Inventory {
         this.predmety = new ArrayList<>();
     }
 
+    public Predmet najdi(String nazev){
+        for(Predmet p : predmety){
+            if(p.getNazev().equalsIgnoreCase(nazev)){
+                return p;
+            }
+        }
+        return null;
+    }
+
     public boolean pridej(Predmet p) {
         if (p == null){
             return false;                               // Tato metoda pridava predmet do inventare, ale jenom pokud je v inventari dostatek mista
@@ -34,20 +43,6 @@ public class Inventory {
         }
         return vypis;
     }
-
-//    public String vypis() { // V teto metode zjistime co je v inventari, pokud nic, vypiseme, ze je prazdny.
-//        String vypis = "";
-//        if (predmety.isEmpty()) {
-//            return ">> Inventar je prazdny.\n";
-//        }
-//
-//        vypis = vypis + ">> kapacita inventare: " + predmety.size() + "/" + kapacita + " \n";
-//        for (Predmet p : predmety) {
-//            //System.out.println();
-//            vypis = vypis + " - " + p.getNazev() + "\n";
-//        }
-//        return vypis;
-//    }
 
     public Predmet odeber(String nazev) { // Tuto metodu pouzivame na odebrani predmetu z inventare, pouziju ho v commandu Poloz
         if (nazev == null) {

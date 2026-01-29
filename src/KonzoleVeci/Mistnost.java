@@ -10,6 +10,7 @@ public class Mistnost {
     private String popis;
     private boolean jeZamcena;
     private boolean temna;
+    private boolean prohledana;
 
     private ArrayList<String> sousedi = new ArrayList<>();
     private ArrayList<Predmet> predmety = new ArrayList<>();
@@ -19,11 +20,19 @@ public class Mistnost {
 
     }
 
+    public boolean isProhledana() {
+        return prohledana;
+    }
+
+    public void setProhledana(boolean prohledana) {
+        this.prohledana = prohledana;
+    }
+
     public void pridatPredmet(Predmet p) {
         predmety.add(p);
     }
 
-    public Predmet odeberPredmet(String nazev) {
+    public Predmet odeberPredmet(String nazev) { //tato metoda je zkopirovana z Inventory
         for (int i = 0; i < predmety.size(); i++) {
             Predmet p = predmety.get(i);
             if (p.getNazev().equalsIgnoreCase(nazev)) {
@@ -88,6 +97,10 @@ public class Mistnost {
 
     public void setPostavy(ArrayList<Postava> postavy) {
         this.postavy = postavy;
+    }
+    @Override
+    public String toString() {
+        return nazev +" - " + popis;
     }
 }
 

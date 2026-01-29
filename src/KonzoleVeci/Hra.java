@@ -13,14 +13,17 @@ import Command.Pomoc;
 import Command.Vezmi;
 import Command.Poloz;
 import Command.Pouzij;
+import Command.Mluv;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 import KonzoleVeci.Nacitani;
+import Postavy.Postava;
 
 public class Hra {
+
         private ArrayList<Ukoly> ukoly = new ArrayList<>();
         private Hrac hrac;
         private HashMap<String, Command> prikazy = new HashMap<>();
@@ -30,6 +33,16 @@ public class Hra {
         Scanner sc = new Scanner(System.in);
         private Inventory inventar = new Inventory(4);
         private Predmet predmety;
+        private boolean hledany;
+        private Postava postavy;
+
+    public boolean isHledany() {
+        return hledany;
+    }
+
+    public void setHledany(boolean hledany) {
+        this.hledany = hledany;
+    }
 
     public Predmet getPredmety() {
         return predmety;
@@ -37,6 +50,18 @@ public class Hra {
 
     public Nacitani getNacitani() {
         return nacitani;
+    }
+
+
+
+    private boolean technickaSkrinOtevrena;
+
+    public boolean isTechnickaSkrinOtevrena() {
+        return technickaSkrinOtevrena;
+    }
+
+    public void setTechnickaSkrinOtevrena(boolean technickaSkrinOtevrena) {
+        this.technickaSkrinOtevrena = technickaSkrinOtevrena;
     }
 
     public void pridaniPrikazu(){
@@ -47,8 +72,11 @@ public class Hra {
         prikazy.put("poloz", new Poloz());
         prikazy.put("pouzij", new Pouzij());
         prikazy.put("vezmi", new Vezmi());
-        prikazy.put("Ukoly", new List());
+        prikazy.put("ukoly", new List());
         prikazy.put("pomoc", new Pomoc());
+        prikazy.put("hledat", new Hledat());
+        prikazy.put("prozkoumej", new Prozkoumej());
+        prikazy.put("mluv", new Mluv());
     }
     public Hra() {
         this.nacitani = Nacitani.loadGameDataFromResources("resources/svet.json");
@@ -76,10 +104,7 @@ public class Hra {
         return prikazy;
     }
 
-    @Override
-    public String toString() {
-        return "Dostupne Prikazy" + prikazy;
-    }
+
 
     public Mistnost getAktualniMistnost() {
         return aktualniMistnost;
