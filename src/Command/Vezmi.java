@@ -34,7 +34,7 @@ public class Vezmi implements Command {
             hra.getAktualniMistnost().pridatPredmet(p);
             return "Inventar je plny neco musis polozit jestli chces toto zvednout :(";
         }
-        return "Vzal jsi: " + p.getNazev();
+        return "Vzal jsi: " + p.getNazev() + " - "+ p.getPopis();
     }
 }
 
