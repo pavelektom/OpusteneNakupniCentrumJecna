@@ -22,6 +22,17 @@ public class Pouzij implements Command {
                 hra.getAktualniMistnost().setTemna(false);
             }
         }
+        if (s.equalsIgnoreCase("pojistka")) {
+            if (!hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
+                return "Tady pojistku pouzit je zbytecne.";
+            }
+            if (hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
+                hra.setPojistkaVPanelu(true) ;
+                hra.zapnutiBezpecnostnihoSystemu();
+            }
+        }
+
+
         if (s.equalsIgnoreCase("naradi")){
             if (!hra.getAktualniMistnost().getNazev().equals("food_court")){
                 return "tady je zbytecne pouzit naradi";
@@ -31,12 +42,6 @@ public class Pouzij implements Command {
                 Predmet pojistka = hra.getNacitani().najdiPredmet("pojistka");
                 hra.getAktualniMistnost().pridatPredmet(pojistka);
                 return "Otevrel jsi technickou skrin, nasel jsi v ni pojistku :D";
-            }
-        }
-        if (s.equalsIgnoreCase("pristupova_karta")){
-            if (hra.getAktualniMistnost().getNazev().equals("elektronika")){
-                hra.getNacitani().najdiMistnost("sklad").setJeZamcena(false);
-                return "Otevrel jsi sklad. ";
             }
         }
         return "";
