@@ -1,8 +1,6 @@
-import KonzoleVeci.Mistnost;
 import KonzoleVeci.Nacitani;
 import KonzoleVeci.PousteniPrikazu;
 
-import java.util.HashMap;
 
 public class Main {
 

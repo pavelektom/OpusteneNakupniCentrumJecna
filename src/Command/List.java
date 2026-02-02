@@ -10,19 +10,19 @@ public class List implements Command {
     @Override
     public String vykonat(Hra hra, String s) {
         ArrayList<Ukoly> ukoly = hra.getUkoly();
-        String nebaviMeTo = "Tvoje ukoly - ";
+        String nebaviMeTo = "Tvoje ukoly  " +"\n";
         if(ukoly.isEmpty()){
             return "Nemas zadne ukoly";
         }
         for (Ukoly zboznujuProgramovani : ukoly) {
             nebaviMeTo = nebaviMeTo + " - " + zboznujuProgramovani.getNazev();
-            nebaviMeTo = nebaviMeTo + " - " + zboznujuProgramovani.getPopis();
+            nebaviMeTo = nebaviMeTo + " -> " + zboznujuProgramovani.getPopis() + "\n";
 
-            if (zboznujuProgramovani.isSplneny()){
-                nebaviMeTo = nebaviMeTo + " - splneny" + "\n";
-            } else{
-                nebaviMeTo = nebaviMeTo + " - nesplneny" + "\n";
-            }
+//            if (zboznujuProgramovani.isSplneny()){
+//                nebaviMeTo = nebaviMeTo + " - splneny" + "\n";
+//            } else{
+//                nebaviMeTo = nebaviMeTo + " - nesplneny" + "\n";
+//            }
         }
         return nebaviMeTo;
     }

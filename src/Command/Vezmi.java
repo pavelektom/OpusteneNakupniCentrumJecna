@@ -28,6 +28,9 @@ public class Vezmi implements Command {
             hra.getAktualniMistnost().pridatPredmet(p);
             return "Tenhle predmet tu mooooznaaaa je, zkus treba jeste neco...";
         }
+        if (p.getNazev().equals("pristupova_karta")) {
+            hra.setMaPristupovouKartu(true);
+        }
 
         Inventory inventar = hra.getInventar();
         if (!inventar.pridej(p)) {

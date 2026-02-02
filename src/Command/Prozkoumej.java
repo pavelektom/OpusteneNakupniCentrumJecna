@@ -10,7 +10,6 @@ public class Prozkoumej implements Command {
         String vypis = "";
         boolean dobryDenPaniUcitelko = true;
         boolean neco = false;
-
         for (Predmet p : hra.getAktualniMistnost().getPredmety()) {
             if (p.isSkryty()) {
                 p.setSkryty(false);

@@ -1,5 +1,5 @@
 package KonzoleVeci;
-
+import Command.Odemkni;
 import Command.Command;
 import Postavy.Hrac;
 import Command.Jdi;
@@ -34,6 +34,15 @@ public class Hra {
         private Predmet predmety;
         private boolean hledany;
         private Postava postavy;
+        private boolean maPristupovouKartu;
+
+    public boolean isMaPristupovouKartu() {
+        return maPristupovouKartu;
+    }
+
+    public void setMaPristupovouKartu(boolean maPristupovouKartu) {
+        this.maPristupovouKartu = maPristupovouKartu;
+    }
 
     public boolean isHledany() {
         return hledany;
@@ -58,8 +67,47 @@ public class Hra {
     public void setUkoly(ArrayList<Ukoly> ukoly) {
         this.ukoly = ukoly;
     }
-
+    private boolean extraZapnuti;
     private boolean technickaSkrinOtevrena;
+    private boolean pojistkaVPanelu;
+
+    public boolean isExtraZapnuti() {
+        return extraZapnuti;
+    }
+
+    public void setExtraZapnuti(boolean extraZapnuti) {
+        this.extraZapnuti = extraZapnuti;
+    }
+
+    public String zapnutiBezpecnostnihoSystemu(){
+        Scanner sc = new Scanner(System.in);
+        if (!pojistkaVPanelu == true){
+            return "Pojistka neni v panelu a nejde zapnout";
+        }
+        if (pojistkaVPanelu ==true){
+            System.out.println("Co je servisni kod?");
+            if (sc.nextLine().trim().equalsIgnoreCase("3110")){
+                setExtraZapnuti(true);
+                if (extraZapnuti == true){
+                    getNacitani().najdiMistnost("vychod").setJeZamcena(false);
+                    getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
+                    return "VYPNUL JSI SYSTEM MUZES ODEJIT!!!";
+                }
+            } else {
+                return "To je spatny kod. :(";
+            }
+        }
+        return "";
+
+    }
+
+    public boolean isPojistkaVPanelu() {
+        return pojistkaVPanelu;
+    }
+
+    public void setPojistkaVPanelu(boolean pojistkaVPanelu) {
+        this.pojistkaVPanelu = pojistkaVPanelu;
+    }
 
     public boolean isTechnickaSkrinOtevrena() {
         return technickaSkrinOtevrena;
@@ -82,6 +130,7 @@ public class Hra {
         prikazy.put("hledat", new Hledat());
         prikazy.put("prozkoumej", new Prozkoumej());
         prikazy.put("mluv", new Mluv());
+        prikazy.put("odemkni", new Odemkni());
     }
     public Hra() {
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
@@ -109,8 +158,6 @@ public class Hra {
     public HashMap<String, Command> getPrikazy() {
         return prikazy;
     }
-
-
 
     public Mistnost getAktualniMistnost() {
         return aktualniMistnost;

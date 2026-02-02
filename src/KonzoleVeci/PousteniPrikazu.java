@@ -7,9 +7,8 @@ public class PousteniPrikazu {
     Scanner sc = new Scanner(System.in);
 
     private void provadeniPrikazu() {
-        System.out.print(">>");
+        System.out.print(">> ");
         String prikaz = sc.nextLine();
-        prikaz = prikaz.trim();
         String[] rozdeleni = prikaz.split(" ");
         String nazevPrikazu = rozdeleni[0].toLowerCase();
         String upresneniPrikazu = "";
@@ -18,9 +17,8 @@ public class PousteniPrikazu {
         }
         if (hra.getPrikazy().containsKey(nazevPrikazu)) {
             System.out.println(hra.getPrikazy().get(nazevPrikazu).vykonat(hra,upresneniPrikazu));
-
         } else {
-            System.out.println(">> Nedefinovany prikaz");
+            System.out.println(">> Tento prikaz neexistuje");
         }
     }
 

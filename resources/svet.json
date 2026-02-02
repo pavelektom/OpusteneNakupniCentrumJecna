@@ -22,7 +22,7 @@
     },
     {
       "nazev": "servisni_kod",
-      "popis": "Papirek se servisnim kodem k bezpecnostnimu panelu.",
+      "popis": "Kod k bezpecnostnimu panelu. -> [3110]",
       "skryty": false
     }
   ],
@@ -203,7 +203,7 @@
       "predmety": [
         {
           "nazev": "servisni_kod",
-          "popis": "Papirek se servisnim kodem k bezpecnostnimu panelu.",
+          "popis": "Kod k bezpecnostnimu panelu. -> [3110]",
           "skryty": false
         }
       ],

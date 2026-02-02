@@ -3,6 +3,8 @@ package Command;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 
+import java.util.Scanner;
+
 public class Jdi implements Command {
 
 
@@ -26,6 +28,32 @@ public class Jdi implements Command {
                 break;
             }
         }
+        if (hra.getNacitani().najdiMistnost("vychod").isJeZamcena() == false){
+            if (s.equalsIgnoreCase("vychod")) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Chces odejit z obchodniho centra?");
+                if (sc.next().equalsIgnoreCase("ano")) {
+                    hra.setEnd(true);
+                    return "VYHRAVAS!!!!!!!!!! GRATULUJU!!!";
+                }else {
+                    return "Ok, muzes pokracovat v mistnosti";
+                }
+            }
+        }
+        if (hra.getNacitani().najdiMistnost("nouzovy_vychod").isJeZamcena() == false){
+            if (s.equalsIgnoreCase("nouzovy_vychod")) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Chces odejit z obchodniho centra?");
+                if (sc.nextLine().equalsIgnoreCase("ano")) {
+                    hra.setEnd(true);
+                    return "VYHRAVAS!!!!!!!!!! GRATULUJU!!!";
+
+                } else {
+                    return "Ok, muzes pokracovat v mistnosti";
+                }
+            }
+        }
+
         if (cilova.isJeZamcena()) {
             return "Mistnost je zamcena";                             // Pokud je mistnost zamcena, tak se mu vypise toto a hrac nemuze vstoupit.
         }
