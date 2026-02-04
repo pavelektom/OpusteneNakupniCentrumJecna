@@ -56,6 +56,13 @@ public class Hra {
         return ukoly;
     }
 
+    public String uvodDoHry(){
+        String vypis = "Vítej ve hře Opuštěné nákupní centrum Ječná" + "\n";
+        vypis += "Momentalne se nachazis v : " + getAktualniMistnost() + "\n";
+        vypis += "Kdybyste nevedel/a co delat, pouzij pomoc pro vypsani prikazu a napoveda pro napovedu" + "\n";
+        return vypis;
+    }
+
     public void setUkoly(ArrayList<Ukoly> ukoly) {
         this.ukoly = ukoly;
     }
@@ -136,10 +143,10 @@ public class Hra {
     public Hra() {
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
         this.ukoly = data.ukoly;
-        System.out.println("Predmety: " + data.predmety.size());
-        System.out.println("Postavy: " + data.postavy.size());
-        System.out.println("Mistnosti: " + data.mistnosti.size());
-        System.out.println("Ukoly: " + data.ukoly.size());
+//        System.out.println("Predmety: " + data.predmety.size());
+//        System.out.println("Postavy: " + data.postavy.size());
+//        System.out.println("Mistnosti: " + data.mistnosti.size());
+//        System.out.println("Ukoly: " + data.ukoly.size());
         this.nacitani = data;
         this.aktualniMistnost = data.najdiMistnost("hlavni_hala");
         pridaniPrikazu();
@@ -182,5 +189,9 @@ public class Hra {
 
     public void setEnd(boolean end) {
         End = end;
+    }
+
+    public void sousediMistnost(){
+        getAktualniMistnost().getSousedi();
     }
 }

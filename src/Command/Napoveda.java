@@ -8,16 +8,17 @@ import java.util.Scanner;
 public class Napoveda implements Command{
     Scanner sc = new Scanner(System.in);
 
+
     @Override
     public String vykonat(Hra hra, String s) {
         System.out.println("S cim potrebujes pomoct?");
         System.out.println("1 - Kam mam jit?");
         System.out.println("2 - Kdo je v teto mistnosti");
-        String emm = ":D";
         switch (sc.next()) {
             case "1":
                 System.out.println("Dostupne vychody - ");
                 System.out.print(hra.getAktualniMistnost().getSousedi());
+                break;
             case "2":
                 if (hra.getAktualniMistnost().getPostavy().isEmpty()) {
                     return "V mistnosti nikdo neni.";
@@ -28,6 +29,6 @@ public class Napoveda implements Command{
                 }
                 return text;
         }
-        return emm;
+        return "";
     }
 }

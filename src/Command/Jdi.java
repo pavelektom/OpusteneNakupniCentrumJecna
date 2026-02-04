@@ -36,7 +36,7 @@ public class Jdi implements Command {
                     hra.setEnd(true);
                     return "VYHRAVAS!!!!!!!!!! GRATULUJU!!!";
                 }else {
-                    return "Ok, muzes pokracovat v mistnosti";
+                    return "Ok, muzes pokracovat v mistnosti, jestli chces odejit tak jdi do jine mistnosti a vrat se sem zpet.";
                 }
             }
         }
