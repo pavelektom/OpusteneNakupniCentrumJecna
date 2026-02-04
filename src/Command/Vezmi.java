@@ -29,7 +29,7 @@ public class Vezmi implements Command {
             return "Tenhle predmet tu mooooznaaaa je, zkus treba jeste neco...";
         }
         if (p.getNazev().equals("pristupova_karta")) {
-            hra.setMaPristupovouKartu(true);
+            hra.setMaPristupovoukartu(true);
         }
 
         Inventory inventar = hra.getInventar();

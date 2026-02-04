@@ -29,10 +29,9 @@ public class Pouzij implements Command {
             if (hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
                 hra.setPojistkaVPanelu(true) ;
                 hra.zapnutiBezpecnostnihoSystemu();
+
             }
         }
-
-
         if (s.equalsIgnoreCase("naradi")){
             if (!hra.getAktualniMistnost().getNazev().equals("food_court")){
                 return "tady je zbytecne pouzit naradi";

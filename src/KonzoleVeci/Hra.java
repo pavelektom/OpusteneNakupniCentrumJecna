@@ -1,5 +1,5 @@
 package KonzoleVeci;
-import Command.Odemkni;
+
 import Command.Command;
 import Postavy.Hrac;
 import Command.Jdi;
@@ -14,6 +14,7 @@ import Command.Vezmi;
 import Command.Poloz;
 import Command.Pouzij;
 import Command.Mluv;
+import Command.Odemkni;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,15 +35,6 @@ public class Hra {
         private Predmet predmety;
         private boolean hledany;
         private Postava postavy;
-        private boolean maPristupovouKartu;
-
-    public boolean isMaPristupovouKartu() {
-        return maPristupovouKartu;
-    }
-
-    public void setMaPristupovouKartu(boolean maPristupovouKartu) {
-        this.maPristupovouKartu = maPristupovouKartu;
-    }
 
     public boolean isHledany() {
         return hledany;
@@ -86,12 +78,12 @@ public class Hra {
         }
         if (pojistkaVPanelu ==true){
             System.out.println("Co je servisni kod?");
-            if (sc.nextLine().trim().equalsIgnoreCase("3110")){
+            if (sc.nextLine().equals("3110")){
                 setExtraZapnuti(true);
                 if (extraZapnuti == true){
                     getNacitani().najdiMistnost("vychod").setJeZamcena(false);
                     getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
-                    return "VYPNUL JSI SYSTEM MUZES ODEJIT!!!";
+                    System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
                 }
             } else {
                 return "To je spatny kod. :(";
@@ -99,6 +91,15 @@ public class Hra {
         }
         return "";
 
+    }
+    private boolean maPristupovoukartu;
+
+    public boolean isMaPristupovoukartu() {
+        return maPristupovoukartu;
+    }
+
+    public void setMaPristupovoukartu(boolean maPristupovoukartu) {
+        this.maPristupovoukartu = maPristupovoukartu;
     }
 
     public boolean isPojistkaVPanelu() {

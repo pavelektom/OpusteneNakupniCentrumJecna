@@ -9,7 +9,7 @@ public class Odemkni implements Command {
         Inventar inventar = new Inventar();
         Predmet p = hra.getInventar().najdi("pristupova_karta");
         if (s.equalsIgnoreCase("sklad")){
-            if (hra.isMaPristupovouKartu() == true) {
+            if (hra.isMaPristupovoukartu() == true) {
                 if (hra.getAktualniMistnost().getNazev().equals("elektronika")){
                     hra.getNacitani().najdiMistnost("sklad").setJeZamcena(false);
                     return "Odemkl jsi sklad. ";

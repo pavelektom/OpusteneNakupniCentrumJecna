@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
         PousteniPrikazu pust = new PousteniPrikazu();
+        System.out.println();
         pust.spusteni();
     }
 }

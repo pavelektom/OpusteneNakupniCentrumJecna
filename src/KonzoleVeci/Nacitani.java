@@ -30,6 +30,7 @@ public class Nacitani {
         }
     }
 
+
     public Mistnost najdiMistnost(String nazev) {
         for (int i = 0; i < mistnosti.size(); i++) {
             if (mistnosti.get(i).getNazev().equalsIgnoreCase(nazev)) {
