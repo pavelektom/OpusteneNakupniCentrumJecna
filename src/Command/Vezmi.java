@@ -32,6 +32,7 @@ public class Vezmi implements Command {
             hra.setMaPristupovoukartu(true);
         }
 
+
         Inventory inventar = hra.getInventar();
         if (!inventar.pridej(p)) {
             hra.getAktualniMistnost().pridatPredmet(p);

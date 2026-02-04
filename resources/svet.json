@@ -45,7 +45,7 @@
       "dialog": "Ferda | Vis co je nutny, ja uz se skoro ani nemuzu hnout, ale nekde tady kolem mas naradi, najdi ho a pote najdi technickou skrin, tam uz budes vedet co delat."
     },
     {
-      "jmeno": "Neznama_stvura",
+      "jmeno": "Stvura",
       "popis": "brrrrrrr brrrrrrrrrrr",
       "dialog": "brrrrrrr brrrrrrrr zabiju te"
     }
@@ -80,11 +80,6 @@
       "temna": true,
       "predmety": [],
       "postavy": [
-        {
-          "jmeno": "Neznama_stvura",
-          "popis": "brrrrrrr brrrrrrrrrrr",
-          "dialog": "brrrrrrr brrrrrrrr zabiju te"
-        }
       ],
       "sousedi": [
         "hlavni_hala",
@@ -147,10 +142,16 @@
     {
       "nazev": "potraviny",
       "popis": "Opusteny obchod, jsou tu jen nejake prosle potraviny, mozna se tu take neco skryva...",
-      "jeZamcena": false,
+      "jeZamcena": true,
       "temna": false,
       "predmety": [],
-      "postavy": [],
+      "postavy": [
+        {
+          "jmeno": "Stvura",
+          "popis": "brrrrrrr brrrrrrrrrrr",
+          "dialog": "brrrrrrr brrrrrrrr zabiju te"
+        }
+      ],
       "sousedi": [
         "temna_chodba"
       ]
@@ -158,7 +159,7 @@
     {
       "nazev": "bezpecnostni_mistnost",
       "popis": "Bezpecnostni mistnost, je tu hlavni bezpecnostni panel se systemem, resetuj ho.",
-      "jeZamcena": false,
+      "jeZamcena": true,
       "temna": false,
       "predmety": [],
       "postavy": [

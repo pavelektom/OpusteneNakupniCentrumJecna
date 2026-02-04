@@ -88,11 +88,24 @@ public class Hra {
             if (sc.nextLine().equals("3110")){
                 setExtraZapnuti(true);
                 if (extraZapnuti == true){
-                    getNacitani().najdiMistnost("vychod").setJeZamcena(false);
-                    getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
-                    System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
+                    String vypis = "Stvura: Ja si te nasel, myslis ze muzes jentak lehce odejit?"+ "\n";
+                    vypis += "Jestli mi odpovis na tento priklad tak te pustim..." + "\n";
+                    vypis += "x = 6 - 2x" + "\n";
+                    vypis += "x = ";
+                    System.out.println(vypis);
+                    if (sc.nextLine().equals("2")) {
+                        getNacitani().najdiMistnost("vychod").setJeZamcena(false);
+                        getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
+                        System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
+                    }
+                } else {
+                    String a = "Prohral jsi, neumis matematiku";
+                    setEnd(true);
+                    return a;
+
                 }
             } else {
+                setEnd(true);
                 return "To je spatny kod. :(";
             }
         }
