@@ -36,7 +36,7 @@ public class Jdi implements Command {
                     hra.setEnd(true);
                     return "VÝHRA! GRATULUJU!!!";
                 }else {
-                    return "Ok, muzes pokracovat v mistnosti, jestli chces odejit tak jdi do jine mistnosti a vrat se sem zpet.";
+                    return "Ok, zustavas v hlavni hale";
                 }
             }
         }
@@ -55,7 +55,7 @@ public class Jdi implements Command {
                         return "Umíráš, stvůra tě sežrala....";
                     }
                 } else {
-                    return "Ok, muzes pokracovat v mistnosti";
+                    return "Ok, zustavas v bezpecnostni mistnosti";
                 }
             }
         }
