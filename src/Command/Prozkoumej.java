@@ -13,6 +13,7 @@ public class Prozkoumej implements Command {
         for (Predmet p : hra.getAktualniMistnost().getPredmety()) {
             if (p.isSkryty()) {
                 p.setSkryty(false);
+                p.setHledan(true);
                 neco = true;
                 if (!dobryDenPaniUcitelko) {
                     vypis += "";
