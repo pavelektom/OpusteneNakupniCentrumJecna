@@ -34,7 +34,7 @@ public class Jdi implements Command {
                 System.out.println("Chces odejit z obchodniho centra?");
                 if (sc.next().equalsIgnoreCase("ano")) {
                     hra.setEnd(true);
-                    return "VYHRAVAS!!!!!!!!!! GRATULUJU!!!";
+                    return "VÝHRA! GRATULUJU!!!";
                 }else {
                     return "Ok, muzes pokracovat v mistnosti, jestli chces odejit tak jdi do jine mistnosti a vrat se sem zpet.";
                 }
@@ -45,9 +45,15 @@ public class Jdi implements Command {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Chces odejit z obchodniho centra?");
                 if (sc.nextLine().equalsIgnoreCase("ano")) {
-                    hra.setEnd(true);
-                    return "VYHRAVAS!!!!!!!!!! GRATULUJU!!!";
-
+                    System.out.println("Stvura: Ahoj přišel jsem sem, jentak tě nenechám odejít grrrr");
+                    System.out.println("Stvura: Jaké číslo z oboru celých čísel následuje jedničku? ");
+                    if (sc.nextInt() == 2) {
+                        hra.setEnd(true);
+                        return "VÝHRA! GRATULUJU!!!";
+                    } else {
+                        hra.setEnd(true);
+                        return "Umíráš, stvůra tě sežrala....";
+                    }
                 } else {
                     return "Ok, muzes pokracovat v mistnosti";
                 }
