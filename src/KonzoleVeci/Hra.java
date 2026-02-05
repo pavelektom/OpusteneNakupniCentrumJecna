@@ -58,8 +58,11 @@ public class Hra {
 
     public String uvodDoHry(){
         String vypis = "Vítej ve hře Opuštěné nákupní centrum Ječná" + "\n";
+        vypis += "Probudil/a ses na studené dlažbě na zemi nákupního centra Ječná, je to tu dlouho opuštěné." +"\n";
+        vypis += "Musíš se odtuď dostat živý/á, jestli se nedostaneš ven, zůstaneš tu uzavřený/á navždy." + "\n";
         vypis += "Momentalne se nachazis v : " + getAktualniMistnost() + "\n";
         vypis += "Kdybyste nevedel/a co delat, pouzij pomoc pro vypsani prikazu a napoveda pro napovedu" + "\n";
+
         return vypis;
     }
 
