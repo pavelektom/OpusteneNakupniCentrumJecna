@@ -14,12 +14,12 @@ public class Napoveda implements Command{
         System.out.println("S cim potrebujes pomoct?");
         System.out.println("1 - Kam mam jit?");
         System.out.println("2 - Kdo je v teto mistnosti");
-        switch (sc.nextInt()) {
-            case 1:
+        switch (sc.next()) {
+            case "1":
                 System.out.println("Dostupne vychody - ");
                 System.out.print(hra.getAktualniMistnost().getSousedi());
                 break;
-            case 2:
+            case "2":
                 if (hra.getAktualniMistnost().getPostavy().isEmpty()) {
                     return "V mistnosti nikdo neni.";
                 }
