@@ -17,6 +17,7 @@ public class Nacitani {
     public ArrayList<Mistnost> mistnosti;
     public ArrayList<Ukoly> ukoly;
 
+
     public static Nacitani loadGameDataFromResources(String path) {
         Gson gson = new Gson();
         try (

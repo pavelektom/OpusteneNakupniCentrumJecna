@@ -16,8 +16,12 @@ public class Mistnost {
     private ArrayList<Predmet> predmety = new ArrayList<>();
     private ArrayList<Postava> postavy = new ArrayList<>();
 
-    public Mistnost(){
-
+    public Mistnost(String nazev, String popis, boolean jeZamcena, boolean temna, boolean prohledana) {
+        this.nazev = nazev;
+        this.popis = popis;
+        this.jeZamcena = jeZamcena;
+        this.temna = temna;
+        this.prohledana = prohledana;
     }
 
     public boolean isProhledana() {

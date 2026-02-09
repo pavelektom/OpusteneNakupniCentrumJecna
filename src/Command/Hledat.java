@@ -14,7 +14,7 @@ public class Hledat implements Command {
         boolean neco = false;
 
         for (Predmet p : m.getPredmety()) {
-            if (!p.isSkryty() && !p.isHledan()) {
+            if (!p.isSkryty() && !p.isHledan()) {  //
                 p.setHledan(true);
                 neco = true;
                 if (!ahoj) {

@@ -4,11 +4,11 @@ import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 
 import java.util.Scanner;
-
+//tato trida je pouzita pro pohyb mezi mistnostmi
 public class Jdi implements Command {
 
-
-
+    public Jdi() {
+    }
 
     @Override
     public String vykonat(Hra hra, String s) {
@@ -28,7 +28,7 @@ public class Jdi implements Command {
                 break;
             }
         }
-        if (hra.getNacitani().najdiMistnost("vychod").isJeZamcena() == false){
+        if (hra.getNacitani().najdiMistnost("vychod").isJeZamcena() == false){ //Pokud je vychod odemceny(hrac odemkl system), tak hrac muze odejit z bezpecnostniho centra
             if (s.equalsIgnoreCase("vychod")) {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Chces odejit z obchodniho centra?");
@@ -40,8 +40,8 @@ public class Jdi implements Command {
                 }
             }
         }
-        if (hra.getNacitani().najdiMistnost("nouzovy_vychod").isJeZamcena() == false){
-            if (s.equalsIgnoreCase("nouzovy_vychod")) {
+        if (hra.getNacitani().najdiMistnost("nouzovy_vychod").isJeZamcena() == false){// Stejne jak vychod, pokud hrac odemkne system, tak muze jit kratsi cestou
+            if (s.equalsIgnoreCase("nouzovy_vychod")) {                         // ale kratsi cesta neni jentak za nic, musi vypocitat od stvury matematiku aby mohl jit
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Chces odejit z obchodniho centra?");
                 if (sc.nextLine().equalsIgnoreCase("ano")) {
