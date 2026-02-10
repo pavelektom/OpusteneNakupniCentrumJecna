@@ -1,10 +1,9 @@
 package Postavy;
-
+//Trida pro vlastnosti vsech postav ve hre.
 public class Postava {
     private String jmeno;
     private String popis;
     private String dialog;
-
 
 
     public String getPopis() {

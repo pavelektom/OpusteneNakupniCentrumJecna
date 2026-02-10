@@ -9,7 +9,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+//tuto tridu pouzivame na nacitani ze souboru
 public class Nacitani {
 
     public ArrayList<Predmet> predmety;
@@ -19,7 +19,7 @@ public class Nacitani {
 
 
     public static Nacitani loadGameDataFromResources(String path) {
-        Gson gson = new Gson();
+        Gson gson = new Gson(); //Pouziju gson na nacteni souboru
         try (
                 FileInputStream fis = new FileInputStream(path);
                 InputStreamReader reader = new InputStreamReader(fis, StandardCharsets.UTF_8)
@@ -31,6 +31,7 @@ public class Nacitani {
         }
     }
 
+    //Mam tu pote 4 metody pro hledani veci, vsechny funguji stejne, projedou arraylist a pokud se = nazvu, tak vypise, jestli ne tak hodi vyjimku
 
     public Mistnost najdiMistnost(String nazev) {
         for (int i = 0; i < mistnosti.size(); i++) {

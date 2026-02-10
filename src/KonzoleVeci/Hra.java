@@ -1,7 +1,6 @@
 package KonzoleVeci;
 
 import Command.Command;
-import Postavy.Hrac;
 import Command.Jdi;
 import Command.Konec;
 import Command.Napoveda;
@@ -25,7 +24,6 @@ import Postavy.Postava;
 
 public class Hra {
         private ArrayList<Ukoly> ukoly;
-        private Hrac hrac;
         private HashMap<String, Command> prikazy = new HashMap<>();
         private Mistnost aktualniMistnost;
         private boolean End;
@@ -56,7 +54,7 @@ public class Hra {
         return ukoly;
     }
 
-    public String uvodDoHry(){
+    public String uvodDoHry(){ //Tato metoda slouzi k vypsani uvodu do hry, aby hrac vedel co delat.
         String vypis = "Vítej ve hře Opuštěné nákupní centrum Ječná" + "\n";
         vypis += "Probudil/a ses na studené dlažbě na zemi nákupního centra Ječná, je to tu dlouho opuštěné." +"\n";
         vypis += "Musíš se odtuď dostat živý/á, jestli se nedostaneš ven, zůstaneš tu uzavřený/á navždy." + "\n";
@@ -81,7 +79,7 @@ public class Hra {
         this.extraZapnuti = extraZapnuti;
     }
 
-    public String zapnutiBezpecnostnihoSystemu(){
+    public String zapnutiBezpecnostnihoSystemu(){ //Tato metoda je bezpecnostni panel, v "pouzij" si nastavime pojistkavpanelu == true
         Scanner sc = new Scanner(System.in);
         if (!pojistkaVPanelu == true){
             return "Pojistka neni v panelu a nejde zapnout";
@@ -89,31 +87,30 @@ public class Hra {
         if (pojistkaVPanelu ==true){
             System.out.println("Co je servisni kod?");
             if (sc.nextLine().equals("3110")){
-                setExtraZapnuti(true);
-                if (extraZapnuti == true){
+                setExtraZapnuti(true); //Zeptame se hrace na servisni kod
+                if (extraZapnuti == true){ //Pokud ma spravny servisni kod musi odpovedet na lehkou rovnici matematiky
                     String vypis = "Stvura: Ja si te nasel, myslis ze muzes jentak lehce odejit?"+ "\n";
                     vypis += "Jestli mi odpovis na tento priklad tak te pustim..." + "\n";
                     vypis += "x = 6 - 2x" + "\n";
                     vypis += "x = ";
-                    System.out.println(vypis);
-                    if (sc.nextLine().equals("2")) {
-                        getNacitani().najdiMistnost("vychod").setJeZamcena(false);
+                    System.out.println(vypis); // Pres vypis += abyste tam nemela systemoutprint :D
+                    if (sc.nextLine().equals("2")) { //Pokud umi matematiku tak muze pokracovat odemknutim centra celeho
+                        getNacitani().najdiMistnost("vychod").setJeZamcena(false); //Nastavujeme odemknuti vychodu a nouzoveho vychodu
                         getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
                         System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
-                    }
-                } else {
-                    String a = "Prohral jsi, neumis matematiku";
-                    setEnd(true);
-                    return a;
-
+                    }else {
+                        String a = "Prohral jsi, neumis matematiku";
+                        System.out.println(a);
+                        setEnd(true); //Pokud neumi matematiku tak prohraje
+                     }
                 }
             } else {
+                String a = "To je spatny kod. :(";
+                System.out.println(a);
                 setEnd(true);
-                return "To je spatny kod. :(";
             }
         }
         return "";
-
     }
     private boolean maPristupovoukartu;
 
@@ -142,7 +139,7 @@ public class Hra {
     }
 
     public void pridaniPrikazu(){
-        prikazy.put("jdi", new Jdi());
+        prikazy.put("jdi", new Jdi()); //Pridavani prikazu do hashmapy, pomoci ktere muze hrac pouzivat prikazy
         prikazy.put("napoveda", new Napoveda());
         prikazy.put("konec", new Konec());
         prikazy.put("inventar", new Inventar());
@@ -157,7 +154,7 @@ public class Hra {
         prikazy.put("odemkni", new Odemkni());
     }
     public Hra() {
-        Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json");
+        Nacitani data = Nacitani.loadGameDataFromResources("resources/svet.json"); //Nacitani ze souboru
         this.ukoly = data.ukoly;
 //        System.out.println("Predmety: " + data.predmety.size());
 //        System.out.println("Postavy: " + data.postavy.size());
@@ -166,9 +163,6 @@ public class Hra {
         this.nacitani = data;
         this.aktualniMistnost = data.najdiMistnost("hlavni_hala");
         pridaniPrikazu();
-    }
-    public Hrac getHrac() {
-        return hrac;
     }
 
     public Inventory getInventar() {
@@ -187,9 +181,6 @@ public class Hra {
         return aktualniMistnost;
     }
 
-    public void setHrac(Hrac hrac) {
-        this.hrac = hrac;
-    }
 
     public void setPrikazy(HashMap<String, Command> prikazy) {
         this.prikazy = prikazy;

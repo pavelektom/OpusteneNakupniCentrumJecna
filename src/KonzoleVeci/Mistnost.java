@@ -3,7 +3,7 @@ package KonzoleVeci;
 import Postavy.Postava;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashMap; //Tato trida reprezentuje kazdou mistnost
 public class Mistnost {
 
     private String nazev;

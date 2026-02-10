@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 import KonzoleVeci.Nacitani;
-import Postavy.Hrac;
 import org.junit.Assert;
 
 import java.util.ArrayList;

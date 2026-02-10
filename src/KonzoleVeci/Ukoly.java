@@ -1,6 +1,6 @@
 package KonzoleVeci;
 
-public class Ukoly {
+public class Ukoly {//Trida pro ukoly, pomoci teto tridy muzeme vypisovat ukoly v prikazu Ukoly, tride List
     private String nazev;
     private String popis;
     private boolean splneny;

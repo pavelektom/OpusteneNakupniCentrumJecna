@@ -1,7 +1,7 @@
 package KonzoleVeci;
 
 import java.util.ArrayList;
-
+//Tato trida je pro prikaz Inventar, je nutna
 public class Inventory {
     private int kapacita;
     private ArrayList<Predmet> predmety;
@@ -12,8 +12,8 @@ public class Inventory {
     }
 
     public Predmet najdi(String nazev){
-        for(Predmet p : predmety){
-            if(p.getNazev().equalsIgnoreCase(nazev)){
+        for(Predmet p : predmety){ //Tato metoda slouzi k prohledani predmetu podle nazvu
+            if(p.getNazev().equalsIgnoreCase(nazev)){ //Projedeme vsechny predmety, pokud je vratime ho, pokud ne vracime null
                 return p;
             }
         }
@@ -39,7 +39,7 @@ public class Inventory {
         }
         String vypis = ">> kapacita inventare: " + predmety.size() + "/" + kapacita + " \n";
         for (Predmet p : predmety) {
-            vypis = vypis + " - " + p.getNazev() + " ";
+            vypis += " - " + p.getNazev() + " ";
         }
         return vypis;
     }
@@ -48,7 +48,7 @@ public class Inventory {
         if (nazev == null) {
             return null;
         }
-        for(int i = 0; i < predmety.size(); i++){
+        for(int i = 0; i < predmety.size(); i++){ // projedeme vsechny predmety, najdeme podle nazvu a odebereme
             Predmet predmet = predmety.get(i);
             if (predmet.getNazev().equalsIgnoreCase(nazev)) {
                 predmety.remove(i);

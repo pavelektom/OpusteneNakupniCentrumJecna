@@ -3,38 +3,40 @@ package Command;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Inventory;
 import KonzoleVeci.Predmet;
-
+//Tato trida je pro pouziti predmetu
 public class Pouzij implements Command {
 
     @Override
     public String vykonat(Hra hra, String s) {
         if (s ==null){
-            return "Co chces pouzit?";
+            return "Co chces pouzit?"; // Pokud hrac nic nenapise vratime, "Co chces pouzit?"
         }
         Inventory inventar = hra.getInventar();
         Predmet p = inventar.najdi(s);
 
-        if (p==null){
+        if (p==null){ // Pokud nema predmet, vratime mu "Tento predmet nemas."
             return "Tento predmet nemas.";
         }
-        if (s.equalsIgnoreCase("baterka")){
-            if (hra.getAktualniMistnost().isTemna()){
+        if (s.equalsIgnoreCase("baterka")){ //Pokud predmet je baterka, nastavime v temne
+            if (hra.getAktualniMistnost().isTemna()){ //Pokud je misntost temna, rozsviti se
                 hra.getAktualniMistnost().setTemna(false);
                 hra.getNacitani().najdiMistnost("bezpecnostni_mistnost").setJeZamcena(false);
-                hra.getNacitani().najdiMistnost("potraviny").setJeZamcena(false);
+                hra.getNacitani().najdiMistnost("potraviny").setJeZamcena(false); //odemknou se potraviny a bezpecnostni mistnost, protoze hrac uz vidi
                 return "Pouzil jsi baterku, uz vidis kolem a muzes jit do mistnosti";
+            } else{
+                return "Tady ti je baterka k nicemu...";
             }
         }
-        if (s.equalsIgnoreCase("pojistka")) {
+        if (s.equalsIgnoreCase("pojistka")) { // Pokud je predmet pojistka overime si, ze hrac je v bezpecnostni mistnosti
             if (!hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
                 return "Tady pojistku pouzit je zbytecne.";
             }
             if (hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
-                hra.setPojistkaVPanelu(true) ;
-                hra.zapnutiBezpecnostnihoSystemu();
+                hra.setPojistkaVPanelu(true) ; // pote nastavime boolean pro tuto metodu
+                hra.zapnutiBezpecnostnihoSystemu(); // -> a pomoci metody ve Hre pouzijeme pouziti panelu
             }
         }
-        if (s.equalsIgnoreCase("naradi")){
+        if (s.equalsIgnoreCase("naradi")){// Pokud je predmet pojistka
             if (!hra.getAktualniMistnost().getNazev().equals("food_court")){
                 return "tady je zbytecne pouzit naradi";
             }

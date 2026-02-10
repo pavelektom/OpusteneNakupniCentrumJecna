@@ -1,5 +1,6 @@
 package Command;
 
+import Command.Hledat;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 import KonzoleVeci.Predmet;

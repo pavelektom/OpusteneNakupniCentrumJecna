@@ -1,5 +1,5 @@
 package KonzoleVeci;
-
+//Trida predmet je pro vsechny predmety, ktere se nachazi v mistnostech a ve hre
 public class Predmet {
     private String nazev;
     private String popis;
@@ -46,7 +46,7 @@ public class Predmet {
     @Override
     public String toString() {
         return nazev +" - " + popis;
-    }
+    } //To string jen pro nazev a popis predmetu
 
     public void setSkryty(boolean skryty) {
         this.skryty = skryty;
