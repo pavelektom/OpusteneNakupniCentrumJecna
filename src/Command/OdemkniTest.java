@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OdemkniTest {
+    Hra hra = new Hra();
+    Odemkni odemkni = new Odemkni();
 
     void priprava(){
         hra.getNacitani().mistnosti.clear();
@@ -24,13 +26,10 @@ class OdemkniTest {
         hra.setMaPristupovoukartu(true);
         hra.setAktualniMistnost(a);
     }
-    Hra hra = new Hra();
-    Odemkni odemkni = new Odemkni();
 
     @Test
     void vykonat() {
         priprava();
-
         assertEquals("Odemkl jsi sklad. ", odemkni.vykonat(hra, "sklad"));
     }
 }
