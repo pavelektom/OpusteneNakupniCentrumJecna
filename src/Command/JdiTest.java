@@ -25,6 +25,8 @@ class JdiTest {
         hra.getNacitani().mistnosti.clear();
         hra.getNacitani().mistnosti.add(new Mistnost("a","c",false,false,false));
         hra.getNacitani().mistnosti.add(new Mistnost("b","d",false,false,false));
+        hra.getNacitani().mistnosti.add(new Mistnost("vychod","e",true,false,false));
+        hra.getNacitani().mistnosti.add(new Mistnost("nouzovy_vychod","e",true,false,false));
         hra.getNacitani().mistnosti.get(0).getSousedi().add(hra.getNacitani().mistnosti.get(1).getNazev());
         hra.getNacitani().mistnosti.get(0).getSousedi().add(hra.getNacitani().mistnosti.get(0).getNazev());
 
