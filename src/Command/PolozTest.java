@@ -19,7 +19,8 @@ class PolozTest {
         Predmet p = new Predmet("em", "popis", false);
         hra.getInventar().pridej(p);
         Poloz poloz = new Poloz();
-        assertEquals("Predmet em byl polozen.", poloz.vykonat(hra, "em"));
+        poloz.vykonat(hra, "em");
+        assertEquals(">> Inventar je prazdny.", hra.getInventar().vypis());
     }
 
     @Test
@@ -37,6 +38,6 @@ class PolozTest {
         hra.getNacitani().mistnosti.add(m);
         hra.setAktualniMistnost(m);
         Poloz poloz = new Poloz();
-        assertEquals("Takovy predmet nemas", poloz.vykonat(hra, "em"));
+        assertEquals("Takovy predmet nemas",poloz.vykonat(hra, "em"));
     }
 }
