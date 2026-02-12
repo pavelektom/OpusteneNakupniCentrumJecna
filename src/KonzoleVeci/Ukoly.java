@@ -5,6 +5,12 @@ public class Ukoly {//Trida pro ukoly, pomoci teto tridy muzeme vypisovat ukoly 
     private String popis;
     private boolean splneny;
 
+    public Ukoly(String nazev, String popis, boolean splneny) {
+        this.nazev = nazev;
+        this.popis = popis;
+        this.splneny = splneny;
+    }
+
     public String getNazev() {
         return nazev;
     }

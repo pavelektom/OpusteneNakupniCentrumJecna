@@ -15,13 +15,13 @@ public class List implements Command {
             return "Nemas zadne ukoly";
         }
         for (Ukoly zboznujuProgramovani : ukoly) {
-            nebaviMeTo = nebaviMeTo + " - " + zboznujuProgramovani.getNazev(); // a tady to nastavi vsechny ukoly
-            nebaviMeTo = nebaviMeTo + " -> " + zboznujuProgramovani.getPopis() + "\n";
+            nebaviMeTo = nebaviMeTo + " - " + zboznujuProgramovani.getNazev() + "\n"; // a tady to nastavi vsechny ukoly
+            nebaviMeTo = nebaviMeTo + "      -> " + zboznujuProgramovani.getPopis() + "\n";
 
             if (zboznujuProgramovani.isSplneny()){
-                nebaviMeTo = nebaviMeTo + " - splneny" + "\n";
+                nebaviMeTo = nebaviMeTo + "      -> splneny" + "\n";
             } else{
-                nebaviMeTo = nebaviMeTo + " - nesplneny" + "\n";
+                nebaviMeTo = nebaviMeTo + "      -> nesplneny" + "\n";
             }
         }
         return nebaviMeTo; // vracime ukoly :D

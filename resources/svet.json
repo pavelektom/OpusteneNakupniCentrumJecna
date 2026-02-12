@@ -224,23 +224,23 @@
 
   "ukoly": [
     {
-      "nazev": "najdi_baterku",
+      "nazev": "Najdi baterku",
       "popis": "Ziskej baterku, jinak nebudes moci prohledat temnou chodbu."
     },
     {
-      "nazev": "odemkni_sklad",
+      "nazev": "Odemkni sklad",
       "popis": "Najdi pristupovou kartu a odemkni sklad."
     },
     {
-      "nazev": "dostan_pojistku",
+      "nazev": "Dostan pojistku",
       "popis": "Dostan ze skladu naradi, pomoci naradi otevri technickou skrin a vezmi si pojistku."
     },
     {
-      "nazev": "oprav_panel",
+      "nazev": "Oprav panel",
       "popis": "Pomoci pojistky a servisniho kodu zprovozni bezpecnostni system"
     },
     {
-      "nazev": "unikni_z_centra",
+      "nazev": "Unikni z centra",
       "popis": "Po spusteni systemu dojdi k vychodu a jdi pryc."
     }
   ]

@@ -105,6 +105,6 @@ public class Mistnost {
     @Override
     public String toString() {
         return nazev +" - " + popis;
-    }
+    } //toString jen pro nazev a popis
 }
 

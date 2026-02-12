@@ -1,9 +1,8 @@
 package Command;
 
 import KonzoleVeci.Hra;
-import KonzoleVeci.Predmet;
-import KonzoleVeci.Inventory;
 
+//Trida pro vypis inventare
 public class Inventar implements Command {
 
     @Override
