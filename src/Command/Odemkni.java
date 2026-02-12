@@ -10,6 +10,7 @@ public class Odemkni implements Command {
             if (hra.isMaPristupovoukartu() == true) {
                 if (hra.getAktualniMistnost().getNazev().equals("elektronika")){ //potvrzeni ze hrac je v elektronice, protoze odjinud nemuze odemknout sklad
                     hra.getNacitani().najdiMistnost("sklad").setJeZamcena(false);// pote se odemkne sklad
+                    hra.getNacitani().ukoly.get(1).setSplneny(true);
                     return "Odemkl jsi sklad. ";
                 }
             } else { // a vratime mu potvrzeni

@@ -18,11 +18,11 @@ public class List implements Command {
             nebaviMeTo = nebaviMeTo + " - " + zboznujuProgramovani.getNazev(); // a tady to nastavi vsechny ukoly
             nebaviMeTo = nebaviMeTo + " -> " + zboznujuProgramovani.getPopis() + "\n";
 
-//            if (zboznujuProgramovani.isSplneny()){
-//                nebaviMeTo = nebaviMeTo + " - splneny" + "\n";
-//            } else{
-//                nebaviMeTo = nebaviMeTo + " - nesplneny" + "\n";
-//            }
+            if (zboznujuProgramovani.isSplneny()){
+                nebaviMeTo = nebaviMeTo + " - splneny" + "\n";
+            } else{
+                nebaviMeTo = nebaviMeTo + " - nesplneny" + "\n";
+            }
         }
         return nebaviMeTo; // vracime ukoly :D
     }

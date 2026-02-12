@@ -98,6 +98,7 @@ public class Hra {
                         getNacitani().najdiMistnost("vychod").setJeZamcena(false); //Nastavujeme odemknuti vychodu a nouzoveho vychodu
                         getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
                         System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
+                        getNacitani().ukoly.get(3).setSplneny(true);
                     }else {
                         String a = "Prohral jsi, neumis matematiku";
                         System.out.println(a);

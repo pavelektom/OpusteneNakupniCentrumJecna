@@ -34,6 +34,7 @@ public class Jdi implements Command {
                 System.out.println("Chces odejit z obchodniho centra?");
                 if (sc.next().equalsIgnoreCase("ano")) {
                     hra.setEnd(true);
+                    hra.getNacitani().ukoly.get(4).setSplneny(true);
                     return "VÝHRA! GRATULUJU!!!";
                 }else {
                     return "Ok, zustavas v hlavni hale";
@@ -49,6 +50,7 @@ public class Jdi implements Command {
                     System.out.println("Stvura: Jaké číslo z oboru celých čísel následuje jedničku? ");
                     if (sc.nextInt() == 2) {
                         hra.setEnd(true);
+                        hra.getNacitani().ukoly.get(4).setSplneny(true);
                         return "VÝHRA! GRATULUJU!!!";
                     } else {
                         hra.setEnd(true);

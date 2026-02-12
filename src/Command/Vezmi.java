@@ -31,7 +31,12 @@ public class Vezmi implements Command {
         if (p.getNazev().equals("pristupova_karta")) {
             hra.setMaPristupovoukartu(true);
         }
-
+        if (p.getNazev().equals("baterka")) {
+            hra.getNacitani().ukoly.get(0).setSplneny(true);
+        }
+        if (p.getNazev().equals("pojistka")) {
+            hra.getNacitani().ukoly.get(2).setSplneny(true);
+        }
         Inventory inventar = hra.getInventar();
         if (!inventar.pridej(p)) {
             hra.getAktualniMistnost().pridatPredmet(p);
