@@ -33,8 +33,8 @@ public class Jdi implements Command {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Chces odejit z obchodniho centra?");
                 if (sc.next().equalsIgnoreCase("ano")) {
-                    hra.setEnd(true);
-                    hra.getNacitani().ukoly.get(4).setSplneny(true);
+                    hra.setEnd(true); //nastavime konec hry
+                    hra.getNacitani().ukoly.get(4).setSplneny(true); //nastavovani ukoly
                     return "VÝHRA! GRATULUJU!!!";
                 }else {
                     return "Ok, zustavas v hlavni hale";
@@ -49,11 +49,11 @@ public class Jdi implements Command {
                     System.out.println("Stvura: Ahoj přišel jsem sem, jentak tě nenechám odejít grrrr");
                     System.out.println("Stvura: Jaké číslo z oboru celých čísel následuje jedničku? ");
                     if (sc.nextInt() == 2) {
-                        hra.setEnd(true);
-                        hra.getNacitani().ukoly.get(4).setSplneny(true);
+                        hra.setEnd(true); // nastavime konec hry
+                        hra.getNacitani().ukoly.get(4).setSplneny(true);// Splnime ukoly
                         return "VÝHRA! GRATULUJU!!!";
                     } else {
-                        hra.setEnd(true);
+                        hra.setEnd(true); //nastavime take konec hry, tentokrat prohru :(
                         return "Umíráš, stvůra tě sežrala....";
                     }
                 } else {

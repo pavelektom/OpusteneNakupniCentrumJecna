@@ -46,7 +46,7 @@ public class Predmet {
     @Override
     public String toString() {
         return nazev +" - " + popis;
-    } //To string jen pro nazev a popis predmetu
+    } //toString jen pro nazev a popis predmetu
 
     public void setSkryty(boolean skryty) {
         this.skryty = skryty;
