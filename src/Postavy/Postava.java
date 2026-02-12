@@ -5,6 +5,11 @@ public class Postava {
     private String popis;
     private String dialog;
 
+    public Postava(String jmeno, String popis, String dialog) {
+        this.jmeno = jmeno;
+        this.popis = popis;
+        this.dialog = dialog;
+    }
 
     public String getPopis() {
         return popis;
