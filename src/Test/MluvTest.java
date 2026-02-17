@@ -1,11 +1,10 @@
-package Command;
+package Test;
 
+import Command.Mluv;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 import Postavy.Postava;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

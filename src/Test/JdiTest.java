@@ -1,17 +1,13 @@
-package Command;
-
-import static org.junit.jupiter.api.Assertions.*;
+package Test;
 
 
+import Command.Jdi;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 import KonzoleVeci.Nacitani;
 import org.junit.Assert;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class JdiTest {
     public ArrayList<Mistnost> mistnosti = new ArrayList<>();

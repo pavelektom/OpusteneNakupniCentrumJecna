@@ -1,5 +1,6 @@
-package Command;
+package Test;
 
+import Command.Inventar;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Predmet;
 import org.junit.jupiter.api.Test;

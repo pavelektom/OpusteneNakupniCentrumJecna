@@ -1,4 +1,4 @@
-package Command;
+package Test;
 
 import Command.Hledat;
 import KonzoleVeci.Hra;

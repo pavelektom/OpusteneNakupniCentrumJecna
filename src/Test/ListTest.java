@@ -1,10 +1,9 @@
-package Command;
+package Test;
 
+import Command.List;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Ukoly;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

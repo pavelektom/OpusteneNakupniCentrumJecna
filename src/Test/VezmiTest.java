@@ -1,5 +1,7 @@
-package Command;
+package Test;
 
+import Command.Hledat;
+import Command.Vezmi;
 import KonzoleVeci.Hra;
 import KonzoleVeci.Mistnost;
 import KonzoleVeci.Predmet;
