@@ -1,8 +1,9 @@
 package Command;
-
 import KonzoleVeci.Hra;
 import KonzoleVeci.Inventory;
+import KonzoleVeci.PinFrame;
 import KonzoleVeci.Predmet;
+
 //Tato trida je pro pouziti predmetu
 public class Pouzij implements Command {
 
@@ -27,14 +28,23 @@ public class Pouzij implements Command {
                 return "Tady ti je baterka k nicemu...";
             }
         }
-        if (s.equalsIgnoreCase("pojistka")) {                               // Pokud je predmet pojistka overime si, ze hrac je v bezpecnostni mistnosti
-            if (!hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
+//        if (s.equalsIgnoreCase("pojistka")) {                               // Pokud je predmet pojistka overime si, ze hrac je v bezpecnostni mistnosti
+//            if (!hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
+//                return "Tady pojistku pouzit je zbytecne.";
+//            }
+//            if (hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
+//                hra.setPojistkaVPanelu(true) ;                                          // pote nastavime boolean pro tuto metodu
+//                hra.zapnutiBezpecnostnihoSystemu();                                     // -> a pomoci metody ve Hre pouzijeme pouziti panelu
+//            }
+//        }
+
+        if (s.equalsIgnoreCase("pojistka")) {
+            if (!hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")) {
                 return "Tady pojistku pouzit je zbytecne.";
             }
-            if (hra.getAktualniMistnost().getNazev().equalsIgnoreCase("bezpecnostni_mistnost")){
-                hra.setPojistkaVPanelu(true) ;                                          // pote nastavime boolean pro tuto metodu
-                hra.zapnutiBezpecnostnihoSystemu();                                     // -> a pomoci metody ve Hre pouzijeme pouziti panelu
-            }
+            hra.setPojistkaVPanelu(true);
+            new PinFrame(hra);
+            return "Zapínám bezpečnostní panel...";
         }
         if (s.equalsIgnoreCase("naradi")){                                  // Pokud je predmet narad overime si, ze hrac je ve food courtu
             if (!hra.getAktualniMistnost().getNazev().equals("food_court")){

@@ -78,41 +78,56 @@ public class Hra {
     public void setExtraZapnuti(boolean extraZapnuti) {
         this.extraZapnuti = extraZapnuti;
     }
+    public String zpracujKod(String kod) { //Tato metoda nam zpracuje kod pro bezpecnostni panel
+        if (!pojistkaVPanelu) {
+            return "Pojistka není v panelu.";
+        }
+        if (!kod.equals("3110")) {
+            setEnd(true);
+            return "Špatný kód. Systém se uzamkl, zůstáváš tu navždy...";
+        } else {
+            setExtraZapnuti(true);
+            getNacitani().najdiMistnost("vychod").setJeZamcena(false);
+            getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
 
-    public String zapnutiBezpecnostnihoSystemu(){ //Tato metoda je bezpecnostni panel, v "pouzij" si nastavime pojistkavpanelu == true
-        Scanner sc = new Scanner(System.in);
-        if (!pojistkaVPanelu == true){
-            return "Pojistka neni v panelu a nejde zapnout";
         }
-        if (pojistkaVPanelu ==true){
-            System.out.println("Co je servisni kod?");
-            if (sc.nextLine().equals("3110")){
-                setExtraZapnuti(true); //Zeptame se hrace na servisni kod
-                if (extraZapnuti == true){ //Pokud ma spravny servisni kod musi odpovedet na lehkou rovnici matematiky
-                    String vypis = "Stvura: Ja si te nasel, myslis ze muzes jentak lehce odejit?"+ "\n";
-                    vypis += "Jestli mi odpovis na tento priklad tak te pustim..." + "\n";
-                    vypis += "x = 6 - 2x" + "\n";
-                    vypis += "x = ";
-                    System.out.println(vypis); // Pres vypis += abyste tam nemela systemoutprint :D
-                    if (sc.nextLine().equals("2")) { //Pokud umi matematiku tak muze pokracovat odemknutim centra celeho
-                        getNacitani().najdiMistnost("vychod").setJeZamcena(false); //Nastavujeme odemknuti vychodu a nouzoveho vychodu
-                        getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
-                        System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
-                        getNacitani().ukoly.get(3).setSplneny(true);
-                    }else {
-                        String a = "Prohral jsi, neumis matematiku";
-                        System.out.println(a);
-                        setEnd(true); //Pokud neumi matematiku tak prohraje
-                     }
-                }
-            } else {
-                String a = "To je spatny kod. :(";
-                System.out.println(a);
-                setEnd(true);
-            }
-        }
-        return "";
+        return "Systém restartován. Můžeš odejít!!!";
     }
+
+//    public String zapnutiBezpecnostnihoSystemu(){ //Tato metoda je bezpecnostni panel, v "pouzij" si nastavime pojistkavpanelu == true
+//        Scanner sc = new Scanner(System.in);
+//        if (!pojistkaVPanelu == true){
+//            return "Pojistka neni v panelu a nejde zapnout";
+//        }
+//        if (pojistkaVPanelu ==true){
+//            System.out.println("Co je servisni kod?");
+//            if (sc.nextLine().equals("3110")){
+//                setExtraZapnuti(true); //Zeptame se hrace na servisni kod
+//                if (extraZapnuti == true){ //Pokud ma spravny servisni kod musi odpovedet na lehkou rovnici matematiky
+//                    String vypis = "Stvura: Ja si te nasel, myslis ze muzes jentak lehce odejit?"+ "\n";
+//                    vypis += "Jestli mi odpovis na tento priklad tak te pustim..." + "\n";
+//                    vypis += "x = 6 - 2x" + "\n";
+//                    vypis += "x = ";
+//                    System.out.println(vypis); // Pres vypis += abyste tam nemela systemoutprint :D
+//                    if (sc.nextLine().equals("2")) { //Pokud umi matematiku tak muze pokracovat odemknutim centra celeho
+//                        getNacitani().najdiMistnost("vychod").setJeZamcena(false); //Nastavujeme odemknuti vychodu a nouzoveho vychodu
+//                        getNacitani().najdiMistnost("nouzovy_vychod").setJeZamcena(false);
+//                        System.out.println("VYPNUL JSI SYSTEM MUZES ODEJIT!!!");
+//                        getNacitani().ukoly.get(3).setSplneny(true);
+//                    }else {
+//                        String a = "Prohral jsi, neumis matematiku";
+//                        System.out.println(a);
+//                        setEnd(true); //Pokud neumi matematiku tak prohraje
+//                     }
+//                }
+//            } else {
+//                String a = "To je spatny kod. :(";
+//                System.out.println(a);
+//                setEnd(true);
+//            }
+//        }
+//        return "";
+//    }
     private boolean maPristupovoukartu;
 
     public boolean isMaPristupovoukartu() {
@@ -202,4 +217,5 @@ public class Hra {
     public void sousediMistnost(){
         getAktualniMistnost().getSousedi();
     }
+
 }

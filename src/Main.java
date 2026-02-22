@@ -1,4 +1,3 @@
-import KonzoleVeci.Nacitani;
 import KonzoleVeci.PousteniPrikazu;
 import KonzoleVeci.Hra;
 
