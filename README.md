@@ -27,7 +27,8 @@ zprovoznit bezpečnostní systém a tím odemknout nákupní centrum.
 ## 🧐 Jak hru spustit
  #### Hra je hraná pomocí konzole jako textová hra  
 1. **Musíte** mít nainstalovaný **jar** soubor s hrou.
-2. Otevřete terminál ujistěte se, že máte správnou cestu k dokumentu
-3. Za dokument napište java -jar (jméno souboru)
-4. **Hrajte :D**
+2. Musíte mít nainstalovanou nedávnou verzi Javy
+3. Otevřete terminál ujistěte se, že máte správnou cestu k dokumentu
+4. Za dokument napište java -jar (jméno souboru)
+5. **Hrajte :D**
 
